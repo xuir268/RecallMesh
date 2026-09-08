@@ -1,0 +1,16 @@
+.venv/
+build/
+models/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.context-memory/
+memory.json
+*.sqlite3
+*.sqlite3-*
+benchmarks/results/
+benchmarks/data/
+.DS_Store
+graph-engine/
+build-install.log

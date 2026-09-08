@@ -1,0 +1,32 @@
+[build-system]
+requires = ["scikit-build-core>=0.10", "nanobind>=2.0"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "recallmesh"
+version = "0.2.0"
+description = "Associative memory layer with self-forming Hebbian structure"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.24"]
+
+[project.scripts]
+recallmesh = "assoc_mem.cli:main"
+assoc-memory = "assoc_mem.cli:main"
+
+[project.optional-dependencies]
+eval = ["nltk>=3.9,<4"]
+
+[tool.scikit-build]
+minimum-version = "0.10"
+cmake.version = ">=3.26"
+wheel.packages = ["src/assoc_mem", "src/recallmesh"]
+sdist.include = ["engine/**", "bindings/**", "src/**", "tests/**", "docs/**", "examples/**", "configs/**", "/CMakeLists.txt", "/LICENSE", "/THIRD_PARTY_NOTICES.md", "/CONTRIBUTING.md"]
+sdist.exclude = ["build/**", "models/**", "benchmarks/**", "graph-engine/**", ".venv/**", ".context-memory/**", "**/__pycache__/**", "**/*.sqlite3", "memory.json"]
+# Cached across rebuilds: a one-line C++ change recompiles in seconds rather
+# than triggering a full configure+build.
+build-dir = "build/{wheel_tag}"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
