@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "storage": {
+    "path": ".context-memory/memory.sqlite3",
+    "max_database_bytes": 67108864
+  },
+  "limits": {
+    "max_nodes": 10000,
+    "max_text_bytes": 16777216,
+    "max_record_bytes": 16384,
+    "max_request_bytes": 65536
+  },
+  "graph": {
+    "initial_capacity": 8192,
+    "max_capacity": 262144,
+    "allow_growth": true,
+    "edge_policy": "star",
+    "lambda": 0.05,
+    "eta": 1.0,
+    "floor": 0.001
+  },
+  "retention": {
+    "overflow": "reject",
+    "ttl_ticks": 0
+  },
+  "retrieval": {
+    "default_limit": 8,
+    "max_limit": 64,
+    "max_context_bytes": 12000,
+    "hops": 2,
+    "graph_weight": 0.4
+  }
+}
