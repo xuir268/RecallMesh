@@ -25,6 +25,10 @@ The bounded pipeline uses follow-up searches, joint evidence selection, whole-re
 
 The full local report is `benchmarks/results/pipeline/REPORT.md` with per-question traces in that directory. Those artifacts are excluded from package distributions. The public source dataset is [LoCoMo](https://github.com/snap-research/locomo/blob/main/data/locomo10.json), licensed CC BY-NC 4.0. Post-pilot source-ID schema hardening has unit coverage; reported pilot failures were retained and the pilot was not rerun after that hardening.
 
+## Methodology coverage
+
+[The methodology guide](methodology.md) separates implemented follow-up search, joint fact selection, citation validation, support checks, and bounded resource controls from proposed typed semantic edges. The pilot compares whole pipelines; it does not isolate the effect of each addition or benchmark guardrails against HeLa-Mem.
+
 ## What changes for an agent
 
 The agent can retain observations between sessions and retrieve linked source records before answering. This can recover bridge facts that a single search misses and reduce the final evidence packet. It does not change the model's learned reasoning ability. Ordinary app chats are not automatically connected. The agent must call the memory interface and pass the returned evidence into its model prompt.

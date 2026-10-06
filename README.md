@@ -20,6 +20,10 @@ usage, via Hebbian co-activation, and decay when unused.
 
 Inspired by [HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](https://arxiv.org/abs/2604.16839) (Zhu et al., 2026). See [research attribution and implementation differences](docs/research.md). RecallMesh is an independent implementation; its results are reported separately from the paper.
 
+## Methodology and engineering extensions
+
+The agent layer adds bounded missing-fact searches, joint selection of supporting facts, whole-record context compression, citation validation, a model support check, and stage audits. [IRCoT](https://aclanthology.org/2023.acl-long.557/) is related work on interleaving retrieval and reasoning. See [the methodology guide](docs/methodology.md) for implementation details and guardrails. Stored graph edges remain untyped co-activation links; semantic relation labels are planned. These additions do not establish superiority over the source papers.
+
 ## Architecture and evidence
 
 ![Proposed architecture](docs/assets/architecture-proposal.png)

@@ -21,3 +21,9 @@ The local tests and answer-quality pilot are reported separately in [evaluation.
   doi={10.48550/arXiv.2604.16839}
 }
 ```
+
+## Related retrieval research
+
+Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, and Ashish Sabharwal. 2023. [Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions (IRCoT)](https://aclanthology.org/2023.acl-long.557/). ACL 2023, pages 10014–10037. DOI: [10.18653/v1/2023.acl-long.557](https://doi.org/10.18653/v1/2023.acl-long.557).
+
+IRCoT informs the related-work discussion of reasoning-guided retrieval. RecallMesh's bounded evidence planner is not a reproduction of IRCoT. See [methodology and engineering extensions](methodology.md) for joint fact selection, support checks, guardrails, and the distinction between existing co-activation edges and proposed typed relations.
