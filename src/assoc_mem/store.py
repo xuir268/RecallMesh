@@ -61,6 +61,8 @@ class NodeStore:
         )
         self.db.commit()
         nid = int(cur.lastrowid)
+        if not self._emb.flags.writeable:
+            self._emb = self._emb.copy()  # immutable mmap checkpoint: copy on first mutation
         self._ensure(nid)
         self._emb[nid] = emb
         self._used_rows = max(self._used_rows, nid + 1)

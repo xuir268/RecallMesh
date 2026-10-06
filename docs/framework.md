@@ -34,7 +34,7 @@ with MemoryClient("memory.json") as memory:
 {"id":6,"method":"stats","params":{}}
 ```
 
-Send each request on one line; each reply is one JSON line with the same request ID and either `ok: true, result: ...` or `ok: false, error: {code, message}`. Requests run sequentially within one connection. Invalid input does not terminate the server. Methods also include `get` and `compact`. `associate` requires existing IDs. Errors include `quota_exceeded`, `invalid_request`, `config_error`, `storage_error`, and `request_too_large`. Recall IDs are strings for compatibility with model citations; mutation arguments use integers.
+Send each request on one line; each reply is one JSON line with the same request ID and either `ok: true, result: ...` or `ok: false, error: {code, message}`. Requests run sequentially within one connection. Invalid input does not terminate the server. Methods also include `get`, `compact`, and `checkpoint`. `associate` requires existing IDs. Errors include `quota_exceeded`, `invalid_request`, `config_error`, `storage_error`, and `request_too_large`. Recall IDs are strings for compatibility with model citations; mutation arguments use integers.
 
 Python SDK calls have a timeout (30 seconds by default). No shell command interpolation is used. Independent clients can share one database; SQLite serializes writes and revision checks refresh stale caches.
 
@@ -52,6 +52,7 @@ These require the corresponding installed/authenticated model CLI. `--backend lo
 | Field | Default | Meaning |
 |---|---:|---|
 | storage.max_database_bytes | 64 MiB | Hard main SQLite file ceiling, rounded down to pages |
+| storage.max_checkpoint_bytes | 64 MiB | One immutable checkpoint generation data budget; temporary generations need extra space |
 | limits.max_nodes | 10,000 | Maximum retained records |
 | limits.max_text_bytes | 16 MiB | Total UTF-8 text plus writer bytes |
 | limits.max_record_bytes | 16 KiB | Per-record text plus writer bytes |
@@ -71,8 +72,10 @@ Quotas reject the whole write transaction rather than silently losing graph upda
 
 **These are not a total process-RAM cap.** Native hash slots consume 16 bytes each (4 MiB at the default maximum). CSR snapshots, embeddings, lexical indexes, Python objects, and temporary rebuilds use additional RAM. SQLite journals and VACUUM can require additional temporary disk space beyond the main-file ceiling. Do not set the database ceiling equal to every last free byte on disk.
 
-SQLite records and association events are authoritative. On restart, the native graph and indexes are rebuilt by replay. Growth doubles the capacity up to the configured maximum and rebuilds; it does not migrate a live lock-free table. Repeated association events consume database space and increase startup/rebuild time until deleted or the database ceiling rejects more writes. This version does not fold that history into checkpoints, and is intended for bounded local workloads. `compact` vacuums unused database space; it does not fold event history. Changing resource config invalidates active clients using the older config; reconnect them.
+SQLite records, persisted embeddings and association events are authoritative. On restart, the native graph is recovered from a valid matching mmap checkpoint or event replay. Lexical indexes still rebuild. Growth doubles the capacity up to the configured maximum and rebuilds; it does not migrate a live lock-free table. Repeated association events consume database space and increase startup/rebuild time until deleted or the database ceiling rejects more writes. Optional `recallmesh checkpoint` captures packed delta state, a mapped read snapshot, and embedding arrays; it does not truncate event history. Stale checkpoints currently fall back to full replay. This version is intended for bounded local workloads. `compact` vacuums unused database space; it does not fold event history. Changing resource config invalidates active clients using the older config; reconnect them.
 
 ## Distribution
 
 The package code is MIT licensed. Build a wheel or source archive from `pyproject.toml`. Downloaded model weights, benchmark data/results, legacy copies, and compiled runtimes are excluded. See `THIRD_PARTY_NOTICES.md`; benchmark data is not relicensed as MIT. The project has not been published to PyPI by this change.
+
+See [checkpoint recovery](recovery.md), [native concurrency measurements](concurrency.md), and [natural-reference retrieval evaluation](natural-evaluation.md) for tested behavior and limits.

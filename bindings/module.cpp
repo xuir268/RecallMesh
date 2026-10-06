@@ -66,6 +66,8 @@ NB_MODULE(_engine, m) {
           },
           "src"_a, "dst"_a, "tick"_a, nb::call_guard<nb::gil_scoped_release>())
 
+      .def("save_checkpoint", &EdgeStore::save_checkpoint, "path"_a, nb::call_guard<nb::gil_scoped_release>())
+      .def("restore_checkpoint", &EdgeStore::restore_checkpoint, "path"_a, nb::call_guard<nb::gil_scoped_release>())
       .def("freeze", &EdgeStore::freeze, "tick"_a, nb::call_guard<nb::gil_scoped_release>())
 
       // -- queries ------------------------------------------------------------

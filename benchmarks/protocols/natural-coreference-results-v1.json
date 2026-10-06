@@ -1,0 +1,86 @@
+{
+  "protocol": {
+    "version": 1,
+    "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "seed": 20261007,
+    "requested": 100,
+    "mined": 100,
+    "candidate_pool": 123,
+    "cases_sha256": "c3c6cf786b81827ee916fbfea971c4ea87f6a00f6e80663ec1436a433e425aec",
+    "status": "exploratory unreviewed candidate screen; not a verified natural identity benchmark",
+    "query": "unedited preceding dialogue turn",
+    "limit": 16,
+    "seed_count": 8,
+    "hops": 2,
+    "graph_weight": 0.4,
+    "edge_policy": "star: current plus previous session turn and top-three lexical prior turns",
+    "selection": "pronoun opening/length rules, fixed-seed shuffle; no outcome selection",
+    "conditions": [
+      "lexical",
+      "associative",
+      "oracle",
+      "counterfactual",
+      "bridge_removed"
+    ],
+    "controls": "oracle supplies annotated candidate pair; counterfactual replaces candidate target with a different original source; bridge_removed removes candidate anchor from associative packet. These are diagnostic evidence controls, not production methods.",
+    "answer_quality": "not measured; no model answer calls",
+    "ablations": [
+      "adjacency_only",
+      "learned_only",
+      "shuffled"
+    ],
+    "shuffled": "fixed permutation of node IDs retains topology and degree distribution, not each labeled node degree",
+    "holdout": "settings inherited from earlier work; same public corpus previously inspected; not a new independent held-out dataset"
+  },
+  "summary": {
+    "lexical": {
+      "target_recall": 0.3,
+      "candidate_pair_recall": 0.65,
+      "all_candidate_pair": 0.3
+    },
+    "associative": {
+      "target_recall": 0.76,
+      "candidate_pair_recall": 0.88,
+      "all_candidate_pair": 0.76
+    },
+    "oracle": {
+      "target_recall": 1.0,
+      "candidate_pair_recall": 1.0,
+      "all_candidate_pair": 1.0
+    },
+    "counterfactual": {
+      "target_recall": 0.0,
+      "candidate_pair_recall": 0.5,
+      "all_candidate_pair": 0.0
+    },
+    "bridge_removed": {
+      "target_recall": 0.76,
+      "candidate_pair_recall": 0.38,
+      "all_candidate_pair": 0.0
+    },
+    "adjacency_only": {
+      "target_recall": 1.0,
+      "candidate_pair_recall": 1.0,
+      "all_candidate_pair": 1.0
+    },
+    "learned_only": {
+      "target_recall": 0.31,
+      "candidate_pair_recall": 0.655,
+      "all_candidate_pair": 0.31
+    },
+    "shuffled": {
+      "target_recall": 0.22,
+      "candidate_pair_recall": 0.61,
+      "all_candidate_pair": 0.22
+    }
+  },
+  "graph_target_gains": 46,
+  "graph_target_losses": 0,
+  "cluster_bootstrap_delta_95": [
+    0.3592233009708738,
+    0.5670325824105894
+  ],
+  "human_validated_cases": 0,
+  "zero_lexical_score_targets": 8,
+  "conversations": 10
+}

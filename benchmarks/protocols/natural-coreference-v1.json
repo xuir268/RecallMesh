@@ -1,0 +1,1437 @@
+{
+  "protocol": {
+    "version": 1,
+    "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "seed": 20261007,
+    "requested": 100,
+    "mined": 100,
+    "candidate_pool": 123,
+    "cases_sha256": "c3c6cf786b81827ee916fbfea971c4ea87f6a00f6e80663ec1436a433e425aec",
+    "status": "exploratory unreviewed candidate screen; not a verified natural identity benchmark",
+    "query": "unedited preceding dialogue turn",
+    "limit": 16,
+    "seed_count": 8,
+    "hops": 2,
+    "graph_weight": 0.4,
+    "edge_policy": "star: current plus previous session turn and top-three lexical prior turns",
+    "selection": "pronoun opening/length rules, fixed-seed shuffle; no outcome selection",
+    "conditions": [
+      "lexical",
+      "associative",
+      "oracle",
+      "counterfactual",
+      "bridge_removed"
+    ],
+    "controls": "oracle supplies annotated candidate pair; counterfactual replaces candidate target with a different original source; bridge_removed removes candidate anchor from associative packet. These are diagnostic evidence controls, not production methods.",
+    "answer_quality": "not measured; no model answer calls",
+    "ablations": [
+      "adjacency_only",
+      "learned_only",
+      "shuffled"
+    ],
+    "shuffled": "fixed permutation of node IDs retains topology and degree distribution, not each labeled node degree",
+    "holdout": "settings inherited from earlier work; same public corpus previously inspected; not a new independent held-out dataset"
+  },
+  "membership": [
+    {
+      "id": "conv-47:D25:13",
+      "conversation": "conv-47",
+      "tick": 25,
+      "anchor": "D25:12",
+      "target": "D25:13",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D5:4",
+      "conversation": "conv-42",
+      "tick": 5,
+      "anchor": "D5:3",
+      "target": "D5:4",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-44:D14:19",
+      "conversation": "conv-44",
+      "tick": 14,
+      "anchor": "D14:18",
+      "target": "D14:19",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D27:21",
+      "conversation": "conv-42",
+      "tick": 27,
+      "anchor": "D27:20",
+      "target": "D27:21",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-47:D1:28",
+      "conversation": "conv-47",
+      "tick": 1,
+      "anchor": "D1:27",
+      "target": "D1:28",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-47:D22:12",
+      "conversation": "conv-47",
+      "tick": 22,
+      "anchor": "D22:11",
+      "target": "D22:12",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-49:D9:16",
+      "conversation": "conv-49",
+      "tick": 9,
+      "anchor": "D9:15",
+      "target": "D9:16",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D10:3",
+      "conversation": "conv-41",
+      "tick": 10,
+      "anchor": "D10:2",
+      "target": "D10:3",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-50:D26:9",
+      "conversation": "conv-50",
+      "tick": 26,
+      "anchor": "D26:8",
+      "target": "D26:9",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D14:11",
+      "conversation": "conv-43",
+      "tick": 14,
+      "anchor": "D14:10",
+      "target": "D14:11",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D10:5",
+      "conversation": "conv-41",
+      "tick": 10,
+      "anchor": "D10:4",
+      "target": "D10:5",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-44:D7:7",
+      "conversation": "conv-44",
+      "tick": 7,
+      "anchor": "D7:6",
+      "target": "D7:7",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-47:D6:4",
+      "conversation": "conv-47",
+      "tick": 6,
+      "anchor": "D6:3",
+      "target": "D6:4",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-50:D15:8",
+      "conversation": "conv-50",
+      "tick": 15,
+      "anchor": "D15:7",
+      "target": "D15:8",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-48:D4:41",
+      "conversation": "conv-48",
+      "tick": 4,
+      "anchor": "D4:40",
+      "target": "D4:41",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-47:D22:7",
+      "conversation": "conv-47",
+      "tick": 22,
+      "anchor": "D22:6",
+      "target": "D22:7",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D13:4",
+      "conversation": "conv-43",
+      "tick": 13,
+      "anchor": "D13:3",
+      "target": "D13:4",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D8:3",
+      "conversation": "conv-43",
+      "tick": 8,
+      "anchor": "D8:2",
+      "target": "D8:3",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-30:D2:6",
+      "conversation": "conv-30",
+      "tick": 2,
+      "anchor": "D2:5",
+      "target": "D2:6",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-50:D28:5",
+      "conversation": "conv-50",
+      "tick": 28,
+      "anchor": "D28:4",
+      "target": "D28:5",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D12:20",
+      "conversation": "conv-41",
+      "tick": 12,
+      "anchor": "D12:19",
+      "target": "D12:20",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-47:D18:18",
+      "conversation": "conv-47",
+      "tick": 18,
+      "anchor": "D18:17",
+      "target": "D18:18",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-26:D6:6",
+      "conversation": "conv-26",
+      "tick": 6,
+      "anchor": "D6:5",
+      "target": "D6:6",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D3:19",
+      "conversation": "conv-43",
+      "tick": 3,
+      "anchor": "D3:18",
+      "target": "D3:19",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D23:11",
+      "conversation": "conv-42",
+      "tick": 23,
+      "anchor": "D23:10",
+      "target": "D23:11",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-49:D7:13",
+      "conversation": "conv-49",
+      "tick": 7,
+      "anchor": "D7:12",
+      "target": "D7:13",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-48:D17:3",
+      "conversation": "conv-48",
+      "tick": 17,
+      "anchor": "D17:2",
+      "target": "D17:3",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D20:31",
+      "conversation": "conv-43",
+      "tick": 20,
+      "anchor": "D20:30",
+      "target": "D20:31",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-50:D24:16",
+      "conversation": "conv-50",
+      "tick": 24,
+      "anchor": "D24:15",
+      "target": "D24:16",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D27:3",
+      "conversation": "conv-43",
+      "tick": 27,
+      "anchor": "D27:2",
+      "target": "D27:3",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-49:D10:6",
+      "conversation": "conv-49",
+      "tick": 10,
+      "anchor": "D10:5",
+      "target": "D10:6",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-47:D14:19",
+      "conversation": "conv-47",
+      "tick": 14,
+      "anchor": "D14:18",
+      "target": "D14:19",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D11:16",
+      "conversation": "conv-43",
+      "tick": 11,
+      "anchor": "D11:15",
+      "target": "D11:16",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D11:5",
+      "conversation": "conv-43",
+      "tick": 11,
+      "anchor": "D11:4",
+      "target": "D11:5",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D23:6",
+      "conversation": "conv-42",
+      "tick": 23,
+      "anchor": "D23:5",
+      "target": "D23:6",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D28:15",
+      "conversation": "conv-41",
+      "tick": 28,
+      "anchor": "D28:14",
+      "target": "D28:15",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D24:14",
+      "conversation": "conv-43",
+      "tick": 24,
+      "anchor": "D24:13",
+      "target": "D24:14",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D31:12",
+      "conversation": "conv-41",
+      "tick": 31,
+      "anchor": "D31:11",
+      "target": "D31:12",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-48:D4:37",
+      "conversation": "conv-48",
+      "tick": 4,
+      "anchor": "D4:36",
+      "target": "D4:37",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D8:6",
+      "conversation": "conv-41",
+      "tick": 8,
+      "anchor": "D8:5",
+      "target": "D8:6",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-48:D16:17",
+      "conversation": "conv-48",
+      "tick": 16,
+      "anchor": "D16:16",
+      "target": "D16:17",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-47:D15:11",
+      "conversation": "conv-47",
+      "tick": 15,
+      "anchor": "D15:10",
+      "target": "D15:11",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D20:12",
+      "conversation": "conv-41",
+      "tick": 20,
+      "anchor": "D20:11",
+      "target": "D20:12",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D7:16",
+      "conversation": "conv-43",
+      "tick": 7,
+      "anchor": "D7:15",
+      "target": "D7:16",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D8:18",
+      "conversation": "conv-43",
+      "tick": 8,
+      "anchor": "D8:17",
+      "target": "D8:18",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D17:14",
+      "conversation": "conv-43",
+      "tick": 17,
+      "anchor": "D17:13",
+      "target": "D17:14",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-44:D14:17",
+      "conversation": "conv-44",
+      "tick": 14,
+      "anchor": "D14:16",
+      "target": "D14:17",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D12:26",
+      "conversation": "conv-43",
+      "tick": 12,
+      "anchor": "D12:25",
+      "target": "D12:26",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-48:D4:7",
+      "conversation": "conv-48",
+      "tick": 4,
+      "anchor": "D4:6",
+      "target": "D4:7",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D20:24",
+      "conversation": "conv-43",
+      "tick": 20,
+      "anchor": "D20:23",
+      "target": "D20:24",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-49:D11:8",
+      "conversation": "conv-49",
+      "tick": 11,
+      "anchor": "D11:7",
+      "target": "D11:8",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D10:8",
+      "conversation": "conv-42",
+      "tick": 10,
+      "anchor": "D10:7",
+      "target": "D10:8",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-44:D9:25",
+      "conversation": "conv-44",
+      "tick": 9,
+      "anchor": "D9:24",
+      "target": "D9:25",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-26:D18:12",
+      "conversation": "conv-26",
+      "tick": 18,
+      "anchor": "D18:11",
+      "target": "D18:12",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-47:D30:6",
+      "conversation": "conv-47",
+      "tick": 30,
+      "anchor": "D30:5",
+      "target": "D30:6",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-49:D24:8",
+      "conversation": "conv-49",
+      "tick": 24,
+      "anchor": "D24:7",
+      "target": "D24:8",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-44:D10:7",
+      "conversation": "conv-44",
+      "tick": 10,
+      "anchor": "D10:6",
+      "target": "D10:7",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-48:D15:30",
+      "conversation": "conv-48",
+      "tick": 15,
+      "anchor": "D15:29",
+      "target": "D15:30",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D8:4",
+      "conversation": "conv-42",
+      "tick": 8,
+      "anchor": "D8:3",
+      "target": "D8:4",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-49:D16:10",
+      "conversation": "conv-49",
+      "tick": 16,
+      "anchor": "D16:9",
+      "target": "D16:10",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-50:D29:6",
+      "conversation": "conv-50",
+      "tick": 29,
+      "anchor": "D29:5",
+      "target": "D29:6",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D7:13",
+      "conversation": "conv-43",
+      "tick": 7,
+      "anchor": "D7:12",
+      "target": "D7:13",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-50:D14:3",
+      "conversation": "conv-50",
+      "tick": 14,
+      "anchor": "D14:2",
+      "target": "D14:3",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-44:D11:34",
+      "conversation": "conv-44",
+      "tick": 11,
+      "anchor": "D11:33",
+      "target": "D11:34",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D25:4",
+      "conversation": "conv-42",
+      "tick": 25,
+      "anchor": "D25:3",
+      "target": "D25:4",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-44:D19:12",
+      "conversation": "conv-44",
+      "tick": 19,
+      "anchor": "D19:11",
+      "target": "D19:12",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D13:3",
+      "conversation": "conv-42",
+      "tick": 13,
+      "anchor": "D13:2",
+      "target": "D13:3",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-48:D13:9",
+      "conversation": "conv-48",
+      "tick": 13,
+      "anchor": "D13:8",
+      "target": "D13:9",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D20:30",
+      "conversation": "conv-43",
+      "tick": 20,
+      "anchor": "D20:29",
+      "target": "D20:30",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-26:D8:23",
+      "conversation": "conv-26",
+      "tick": 8,
+      "anchor": "D8:22",
+      "target": "D8:23",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-44:D5:12",
+      "conversation": "conv-44",
+      "tick": 5,
+      "anchor": "D5:11",
+      "target": "D5:12",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-26:D11:6",
+      "conversation": "conv-26",
+      "tick": 11,
+      "anchor": "D11:5",
+      "target": "D11:6",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-26:D8:14",
+      "conversation": "conv-26",
+      "tick": 8,
+      "anchor": "D8:13",
+      "target": "D8:14",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-26:D13:5",
+      "conversation": "conv-26",
+      "tick": 13,
+      "anchor": "D13:4",
+      "target": "D13:5",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-30:D5:11",
+      "conversation": "conv-30",
+      "tick": 5,
+      "anchor": "D5:10",
+      "target": "D5:11",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-50:D11:3",
+      "conversation": "conv-50",
+      "tick": 11,
+      "anchor": "D11:2",
+      "target": "D11:3",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-26:D18:9",
+      "conversation": "conv-26",
+      "tick": 18,
+      "anchor": "D18:8",
+      "target": "D18:9",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-48:D15:33",
+      "conversation": "conv-48",
+      "tick": 15,
+      "anchor": "D15:32",
+      "target": "D15:33",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D31:9",
+      "conversation": "conv-41",
+      "tick": 31,
+      "anchor": "D31:8",
+      "target": "D31:9",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-26:D17:19",
+      "conversation": "conv-26",
+      "tick": 17,
+      "anchor": "D17:18",
+      "target": "D17:19",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-49:D18:4",
+      "conversation": "conv-49",
+      "tick": 18,
+      "anchor": "D18:3",
+      "target": "D18:4",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D8:11",
+      "conversation": "conv-42",
+      "tick": 8,
+      "anchor": "D8:10",
+      "target": "D8:11",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D1:14",
+      "conversation": "conv-43",
+      "tick": 1,
+      "anchor": "D1:13",
+      "target": "D1:14",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-49:D20:3",
+      "conversation": "conv-49",
+      "tick": 20,
+      "anchor": "D20:2",
+      "target": "D20:3",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-48:D15:36",
+      "conversation": "conv-48",
+      "tick": 15,
+      "anchor": "D15:35",
+      "target": "D15:36",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D4:12",
+      "conversation": "conv-42",
+      "tick": 4,
+      "anchor": "D4:11",
+      "target": "D4:12",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D24:12",
+      "conversation": "conv-43",
+      "tick": 24,
+      "anchor": "D24:11",
+      "target": "D24:12",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-44:D19:21",
+      "conversation": "conv-44",
+      "tick": 19,
+      "anchor": "D19:20",
+      "target": "D19:21",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-43:D5:15",
+      "conversation": "conv-43",
+      "tick": 5,
+      "anchor": "D5:14",
+      "target": "D5:15",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D26:6",
+      "conversation": "conv-41",
+      "tick": 26,
+      "anchor": "D26:5",
+      "target": "D26:6",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-47:D26:6",
+      "conversation": "conv-47",
+      "tick": 26,
+      "anchor": "D26:5",
+      "target": "D26:6",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-42:D24:9",
+      "conversation": "conv-42",
+      "tick": 24,
+      "anchor": "D24:8",
+      "target": "D24:9",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D5:5",
+      "conversation": "conv-41",
+      "tick": 5,
+      "anchor": "D5:4",
+      "target": "D5:5",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D18:22",
+      "conversation": "conv-41",
+      "tick": 18,
+      "anchor": "D18:21",
+      "target": "D18:22",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D12:21",
+      "conversation": "conv-41",
+      "tick": 12,
+      "anchor": "D12:20",
+      "target": "D12:21",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-44:D10:9",
+      "conversation": "conv-44",
+      "tick": 10,
+      "anchor": "D10:8",
+      "target": "D10:9",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D7:7",
+      "conversation": "conv-41",
+      "tick": 7,
+      "anchor": "D7:6",
+      "target": "D7:7",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-48:D4:30",
+      "conversation": "conv-48",
+      "tick": 4,
+      "anchor": "D4:29",
+      "target": "D4:30",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-41:D24:4",
+      "conversation": "conv-41",
+      "tick": 24,
+      "anchor": "D24:3",
+      "target": "D24:4",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    },
+    {
+      "id": "conv-47:D4:4",
+      "conversation": "conv-47",
+      "tick": 4,
+      "anchor": "D4:3",
+      "target": "D4:4",
+      "annotation": {
+        "status": "unreviewed",
+        "valid_chain": null,
+        "referent": null,
+        "kind": null
+      },
+      "warning": "Pronoun opening is a heuristic; expletive it, vague affect and ambiguous antecedents may be false positives."
+    }
+  ]
+}

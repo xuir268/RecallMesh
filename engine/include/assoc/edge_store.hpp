@@ -1,6 +1,7 @@
 #pragma once
 
 #include <atomic>
+#include <string>
 #include <cstddef>
 #include <memory>
 #include <vector>
@@ -142,6 +143,9 @@ class EdgeStore {
   // Scan the delta, drop dead edges, build a fresh CSR snapshot, publish it.
   // Defined in edge_store.cpp, where CsrSnapshot is complete.
   void freeze(Tick tick);
+  // Startup/checkpoint only: caller must exclude writers. Both files are immutable.
+  void save_checkpoint(const std::string& path) const;
+  void restore_checkpoint(const std::string& path);
 
   [[nodiscard]] std::shared_ptr<const CsrSnapshot> snapshot() const {
     return std::atomic_load_explicit(&snapshot_, std::memory_order_acquire);

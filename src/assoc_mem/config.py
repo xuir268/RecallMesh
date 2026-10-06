@@ -6,7 +6,7 @@ from pathlib import Path
 
 DEFAULT_CONFIG = {
     'version': 1,
-    'storage': {'path': '.context-memory/memory.sqlite3', 'max_database_bytes': 67108864},
+    'storage': {'path': '.context-memory/memory.sqlite3', 'max_database_bytes': 67108864, 'max_checkpoint_bytes': 67108864},
     'limits': {'max_nodes': 10000, 'max_text_bytes': 16777216,
                'max_record_bytes': 16384, 'max_request_bytes': 65536},
     'graph': {'initial_capacity': 8192, 'max_capacity': 262144,
@@ -40,6 +40,7 @@ class MemoryConfig:
             if type(v) is not int or not minimum<=v<=maximum:
                 raise ConfigError(f'{section}.{key} must be an integer in {minimum}..{maximum}')
         integer('storage','max_database_bytes',65536,1<<40)
+        integer('storage','max_checkpoint_bytes',65536,1<<40)
         for key,lo,hi in [('max_nodes',1,1000000),('max_text_bytes',1,1<<40),
                            ('max_record_bytes',1,1<<24),('max_request_bytes',1024,1<<25)]:
             integer('limits',key,lo,hi)

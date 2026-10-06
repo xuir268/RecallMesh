@@ -1,0 +1,28 @@
+name: Native concurrency and recovery
+on: [push, pull_request]
+jobs:
+  native:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        sanitizer: [undefined, thread]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure native checks
+        run: >-
+          cmake -S . -B build/ci -DASSOC_BUILD_PYTHON=OFF
+          -DASSOC_BUILD_BENCHMARKS=ON -DCMAKE_BUILD_TYPE=Debug
+          -DCMAKE_CXX_FLAGS="-fsanitize=${{ matrix.sanitizer }} -fno-omit-frame-pointer -g"
+          -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=${{ matrix.sanitizer }}"
+      - run: cmake --build build/ci -j 2
+      - run: ctest --test-dir build/ci --output-on-failure
+      - name: Shared-graph correctness under sanitizer
+        run: build/ci/concurrent_agents 10000 > shared-graph.csv
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-${{ matrix.sanitizer }}
+          path: |
+            shared-graph.csv
+            build/ci/Testing/Temporary/LastTest.log

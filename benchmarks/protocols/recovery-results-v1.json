@@ -1,0 +1,12 @@
+{
+  "records": 64,
+  "association_events": 101046,
+  "repeats_per_mode": 5,
+  "warm_file_cache": true,
+  "fresh_process_each_restart": true,
+  "median_seconds": {
+    "event_replay": 0.05102545900444966,
+    "mmap_checkpoint": 0.007235583005240187
+  },
+  "exact_recovery_equal": true
+}

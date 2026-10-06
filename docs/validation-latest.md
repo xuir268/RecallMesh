@@ -1,30 +1,21 @@
-# Validation rerun — October 6, 2026
+# Validation rerun — October 7, 2026
 
-Executed after adding research attribution and renaming the branch. This rerun checks implementation behavior; the model answer-quality pilot was not rerun.
-
-## Python tests
+Executed after durable embedding storage, mmap checkpoints, natural-reference protocols and concurrency artifact changes. Answer-generation benchmarks were not rerun.
 
 ```text
 $ .venv/bin/python -m pytest tests -q
-..........................................................               [100%]
-58 passed in 1.31s
-```
+69 passed in 1.50s
 
-Exit code: 0
-
-## Native tests
-
-```text
 $ ctest --test-dir build/native --output-on-failure
-Test project /Users/sparshgupta/Desktop/ContextMemory/build/native
-    Start 1: assoc_smoke
-1/2 Test #1: assoc_smoke ......................   Passed    0.08 sec
-    Start 2: csr_build_stress
-2/2 Test #2: csr_build_stress .................   Passed    0.30 sec
-
-100% tests passed, 0 tests failed out of 2
-
-Total Test time (real) =   0.39 sec
+assoc_smoke: passed
+csr_build_stress: passed
+segment_recovery: passed
+100% tests passed, 0 tests failed out of 3
+Total Test time: 0.42 sec
 ```
 
-Exit code: 0
+Native build uses `-fsanitize=undefined`. All 45 native concurrent-agent runs passed exact final update checks, at 1/2/4/8/16 threads across three workloads and three repetitions. Wheel and source archive build checks passed. Source archives exclude datasets, model weights, result directories and environments.
+
+Local ThreadSanitizer built successfully but all three CTests aborted during runtime initialization with “Interceptors are not working.” Explicit runtime preloading also failed. This is not a TSan pass. A Linux sanitizer workflow is added; check its result independently.
+
+Natural-reference retrieval results are in [natural-evaluation.md](natural-evaluation.md), restart results in [recovery.md](recovery.md), and contention measurements in [concurrency.md](concurrency.md). These measurements do not prove better agent answer quality or a distinctive co-activation identity-resolution advantage.

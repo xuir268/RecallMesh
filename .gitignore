@@ -14,3 +14,4 @@ benchmarks/data/
 .DS_Store
 graph-engine/
 build-install.log
+*.checkpoints/

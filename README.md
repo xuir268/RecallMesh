@@ -1,6 +1,8 @@
 # RecallMesh
 
-A model-independent agent memory framework with a JSON CLI, Python client, durable graph associations, and configurable storage and retention limits. Package code is MIT licensed.
+A model-independent agent memory framework with a C++ shared graph engine, JSON CLI, durable records/embeddings/associations, mmap recovery checkpoints, and configurable storage limits. Package code is MIT licensed.
+
+The native write path supports concurrent reinforcement with atomic packed edges; readers traverse immutable snapshots. The managed CLI serializes SQLite transactions, so native concurrency measurements do not establish whole-agent framework throughput. [Shared-graph contention results](docs/concurrency.md) include retries and scaling limits; TSan is not yet verified clean.
 
 ```sh
 python -m pip install scikit-build-core nanobind numpy
@@ -28,9 +30,18 @@ The agent layer adds bounded missing-fact searches, joint selection of supportin
 
 ![Proposed architecture](docs/assets/architecture-proposal.png)
 
-This diagram is the proposed architecture. The current implementation uses a Python/JSON control layer, BM25 seeds and graph walks, a C++ atomic edge table, in-memory CSR snapshots, and a durable SQLite association log. Go, MCP, gRPC, production ANN, mmap segments, hub detection, and background distillation are planned, not implemented.
+This diagram is the proposed architecture. The current implementation uses a Python/JSON control layer, BM25 seeds and graph walks, a C++ atomic edge table, in-memory CSR snapshots, and a durable SQLite association log. Immutable mmap checkpoint snapshots and embeddings are now implemented on POSIX. Go, MCP, gRPC, production ANN, hub detection, background distillation, and a multi-segment LSM hierarchy remain planned.
 
 See [architecture status](docs/architecture.md), [test results and limitations](docs/evaluation.md), and [agent integration](docs/framework.md). The legacy `assoc_mem` imports and `assoc-memory` command remain compatible.
+
+## Latest evidence — October 7, 2026
+
+- [100 original LoCoMo speaker-coreference questions](docs/natural-evaluation.md): gold evidence recall @16 was 52.08% for BM25 and 58.31% for the graph. Adjacency-only reached 57.89%; a distinctive co-activation advantage is not established. This is not 100 validated multi-turn aliases.
+- A separate 100-candidate pronoun screen is explicitly unreviewed and strongly biased toward adjacency; its large gain is not used as an identity-resolution headline.
+- [Restart recovery](docs/recovery.md): records, embedding vectors, edges and ticks recover durably. Optional mmap checkpoints avoid full log replay when the database revision matches.
+- [One shared native graph](docs/concurrency.md): all 45 reader/writer benchmark runs passed exact update checks. High contention increases CAS retries and reduces throughput. Linux sanitizer CI is provided; local TSan initialization still fails.
+
+Older answer-quality pilot results below remain historical; these new retrieval studies do not measure agent answer accuracy.
 
 ## Layout
 
@@ -101,9 +112,9 @@ C++20 and CMake 3.26+ are required.
 
 ## Remaining prototype limitations
 
-- SQLite stores node text and validity, but embeddings, graph edges and session
-  ticks are not persisted/restored. Use the in-memory demo; reopening a file
-  database does not restore a complete memory system.
+- The legacy `Memory(path=...)` API does not restore complete graph state.
+  Use `ManagedMemory` or `recallmesh` for durable embeddings, association events,
+  ticks and checkpoint recovery. Checkpoints require POSIX for mapped restore.
 - Activation merges duplicate nodes per hop and caches decayed rows per query.
   Large frontiers still touch many edges; keep hop counts bounded.
 - Decay ticks must not wrap. The lookup-table length is a cache boundary, not

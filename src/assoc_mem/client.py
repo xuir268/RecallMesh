@@ -49,6 +49,7 @@ class MemoryClient:
     def recall(self,query,limit=None):
         return self.call('recall',**({'query':query,'limit':limit} if limit is not None else {'query':query}))
     def forget(self,nid):return self.call('forget',id=nid)
+    def checkpoint(self):return self.call('checkpoint')
     def stats(self):return self.call('stats')
     def advance(self,steps=1):return self.call('advance',steps=steps)
     def close(self):

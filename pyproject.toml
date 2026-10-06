@@ -22,7 +22,7 @@ eval = ["nltk>=3.9,<4"]
 minimum-version = "0.10"
 cmake.version = ">=3.26"
 wheel.packages = ["src/assoc_mem", "src/recallmesh"]
-sdist.include = ["engine/**", "bindings/**", "src/**", "tests/**", "docs/**", "examples/**", "configs/**", "/CMakeLists.txt", "/LICENSE", "/THIRD_PARTY_NOTICES.md", "/CONTRIBUTING.md"]
+sdist.include = ["engine/**", "bindings/**", "src/**", "tests/**", "docs/**", "examples/**", "configs/**", "/CMakeLists.txt", "/LICENSE", "/THIRD_PARTY_NOTICES.md", "/CONTRIBUTING.md", "/benchmarks/concurrent_agents.cpp", "/benchmarks/*.py", "/benchmarks/reference/**", "/tools/**", "/benchmarks/protocols/**"]
 sdist.exclude = ["build/**", "models/**", "benchmarks/**", "graph-engine/**", ".venv/**", ".context-memory/**", "**/__pycache__/**", "**/*.sqlite3", "memory.json"]
 # Cached across rebuilds: a one-line C++ change recompiles in seconds rather
 # than triggering a full configure+build.

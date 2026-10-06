@@ -7,14 +7,14 @@ from pathlib import Path
 from .config import DEFAULT_CONFIG,MemoryConfig,ConfigError
 from .framework import ManagedMemory,QuotaExceeded
 
-COMMANDS={'init','serve','remember','recall','get','forget','associate','advance','stats','compact'}
+COMMANDS={'init','serve','remember','recall','get','forget','associate','advance','stats','compact','checkpoint'}
 
 
 def dispatch(memory,method,params):
     if method not in COMMANDS-{'init','serve'}:raise ValueError('unknown method')
     if not isinstance(params,dict):raise ValueError('params must be an object')
     expected={'remember':{'text','writer'},'recall':{'query','limit','hops','mode'},
-              'get':{'id'},'forget':{'id'},'associate':{'ids'},'advance':{'steps'},'stats':set(),'compact':set()}
+              'get':{'id'},'forget':{'id'},'associate':{'ids'},'advance':{'steps'},'stats':set(),'compact':set(),'checkpoint':set()}
     if set(params)-expected[method]:raise ValueError('unknown parameters')
     if method in {'get','forget'}:params={'nid':params['id']}
     return getattr(memory,method)(**params)

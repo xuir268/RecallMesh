@@ -38,7 +38,7 @@ The checker is another model. It may approve an unsupported answer or reject a c
 | Prompt boundary | Records and drafts are explicitly described as untrusted data; this is not proven prompt-injection immunity |
 | Answer rejection | Invalid citations or failed model support checks cause abstention |
 | Audit | Retrieval traces, reviewed/selected IDs, plans, drafts, checks, usage, and dropped records are recorded; failed plans are retained before validation raises |
-| Memory management | Durable records/events, transactional quota rejection, stable IDs, opt-in eviction, TTL ticks, and bounded graph growth |
+| Memory management | Durable records/events, transactional quota rejection, stable IDs, opt-in eviction, TTL ticks, and bounded graph growth and optional mapped recovery checkpoints |
 | Fact provenance | Generated answers are not automatically remembered as observations |
 
 These are concrete engineering additions to this implementation. We have not performed a matched comparison of guardrail effectiveness against the original HeLa-Mem implementation. Do not describe them as a proven security or accuracy improvement over that paper.

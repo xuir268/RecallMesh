@@ -2,6 +2,7 @@
 # when chasing a contention bug you do not want the interpreter in the trace.
 add_library(assoc_engine STATIC
   src/edge_store.cpp
+  src/segment.cpp
   src/csr.cpp
 )
 

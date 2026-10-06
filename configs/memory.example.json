@@ -2,7 +2,8 @@
   "version": 1,
   "storage": {
     "path": ".context-memory/memory.sqlite3",
-    "max_database_bytes": 67108864
+    "max_database_bytes": 67108864,
+    "max_checkpoint_bytes": 67108864
   },
   "limits": {
     "max_nodes": 10000,

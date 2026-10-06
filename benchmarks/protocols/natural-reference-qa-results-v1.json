@@ -1,0 +1,81 @@
+{
+  "protocol": {
+    "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "seed": 20261007,
+    "candidate_pool": 259,
+    "cases": 100,
+    "selection": "original QA, one named speaker, original evidence starts I/my and omits that speaker name; fixed random sample before outcomes; conversations 0\u20132 excluded",
+    "gold": "unchanged upstream evidence IDs; identity is grounded by dataset speaker annotation",
+    "scope": "speaker coreference QA; NOT 100 independently annotated alias/multi-turn identity chains",
+    "query": "original unedited benchmark question",
+    "metadata": "date, speaker name, original text and supplied caption are included equally in all production arms",
+    "limit": 16,
+    "graph_weight": 0.4,
+    "hops": 2,
+    "seed_count": 8,
+    "policy": "star current/prior-top-three/previous-session-turn",
+    "conditions": [
+      "lexical",
+      "associative",
+      "oracle",
+      "counterfactual",
+      "bridge_removed"
+    ],
+    "ablations": [
+      "adjacency_only",
+      "learned_only",
+      "shuffled"
+    ],
+    "controls": "oracle is supplied gold; counterfactual replaces source with another speaker source; bridge_removed drops a traversed non-target intermediate from the evidence packet, if any, with no backfill. Neither is an answer-score test without model calls.",
+    "answer_quality": "not evaluated",
+    "prior_exposure": "these conversations appeared in earlier project evaluation; not a new unseen corpus"
+  },
+  "summary": {
+    "lexical": {
+      "evidence_recall": 0.5208015873015873,
+      "any_evidence": 0.66,
+      "all_evidence": 0.42
+    },
+    "associative": {
+      "evidence_recall": 0.5830912698412698,
+      "any_evidence": 0.72,
+      "all_evidence": 0.48
+    },
+    "oracle": {
+      "evidence_recall": 1.0,
+      "any_evidence": 1.0,
+      "all_evidence": 1.0
+    },
+    "counterfactual": {
+      "evidence_recall": 0.06563492063492063,
+      "any_evidence": 0.17,
+      "all_evidence": 0.0
+    },
+    "bridge_removed": {
+      "evidence_recall": 0.5830912698412698,
+      "any_evidence": 0.72,
+      "all_evidence": 0.48
+    },
+    "adjacency_only": {
+      "evidence_recall": 0.5788968253968254,
+      "any_evidence": 0.71,
+      "all_evidence": 0.48
+    },
+    "learned_only": {
+      "evidence_recall": 0.5415912698412698,
+      "any_evidence": 0.69,
+      "all_evidence": 0.43
+    },
+    "shuffled": {
+      "evidence_recall": 0.5214404761904761,
+      "any_evidence": 0.68,
+      "all_evidence": 0.42
+    }
+  },
+  "cluster_bootstrap_delta_95": [
+    0.01613614417989418,
+    0.12314814814814815
+  ],
+  "graph_gains": 12,
+  "graph_losses": 2
+}

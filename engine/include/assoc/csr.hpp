@@ -4,6 +4,8 @@
 #include <cstddef>
 #include <cstdint>
 #include <span>
+#include <memory>
+#include <string>
 #include <utility>
 #include <vector>
 
@@ -122,6 +124,10 @@ class CsrSnapshot {
     return s;
   }
 
+  void save_segment(const std::string& path) const;
+  static CsrSnapshot map_segment(const std::string& path, Params expected);
+  [[nodiscard]] bool mapped() const noexcept { return static_cast<bool>(mapping_); }
+
   // -------------------------------------------------------------------------
   // Row access
   // -------------------------------------------------------------------------
@@ -132,18 +138,20 @@ class CsrSnapshot {
 
   [[nodiscard]] std::span<const NodeId> row_nodes(NodeId n) const noexcept {
     if (!has(n)) return {};
-    const std::size_t b = row_offsets_[n], e = row_offsets_[n + 1];
-    return std::span<const NodeId>(neighbors_).subspan(b, e - b);
+    const auto offsets = offset_view();
+    const std::size_t b = offsets[n], e = offsets[n + 1];
+    return node_view().subspan(b, e - b);
   }
 
   [[nodiscard]] std::span<const EdgeVal> row_vals(NodeId n) const noexcept {
     if (!has(n)) return {};
-    const std::size_t b = row_offsets_[n], e = row_offsets_[n + 1];
-    return std::span<const EdgeVal>(vals_).subspan(b, e - b);
+    const auto offsets = offset_view();
+    const std::size_t b = offsets[n], e = offsets[n + 1];
+    return value_view().subspan(b, e - b);
   }
 
   [[nodiscard]] std::size_t degree(NodeId n) const noexcept {
-    return has(n) ? row_offsets_[n + 1] - row_offsets_[n] : 0;
+    return has(n) ? offset_view()[n + 1] - offset_view()[n] : 0;
   }
 
   // -------------------------------------------------------------------------
@@ -218,15 +226,23 @@ class CsrSnapshot {
 
   [[nodiscard]] std::size_t node_count() const noexcept { return n_nodes_; }
   [[nodiscard]] std::size_t edge_count() const noexcept { return n_edges_; }
-  [[nodiscard]] std::size_t entry_count() const noexcept { return neighbors_.size(); }
+  [[nodiscard]] std::size_t entry_count() const noexcept { return node_view().size(); }
   [[nodiscard]] const DecayTable& decay() const noexcept { return decay_; }
 
   [[nodiscard]] std::size_t bytes() const noexcept {
-    return row_offsets_.size() * sizeof(std::size_t) + neighbors_.size() * sizeof(NodeId) +
-           vals_.size() * sizeof(EdgeVal);
+    return offset_view().size() * sizeof(std::size_t) + node_view().size() * sizeof(NodeId) +
+           value_view().size() * sizeof(EdgeVal);
   }
 
  private:
+  std::span<const std::size_t> offset_view() const { return mapping_ ? mapped_offsets_ : std::span<const std::size_t>(row_offsets_); }
+  std::span<const NodeId> node_view() const { return mapping_ ? mapped_nodes_ : std::span<const NodeId>(neighbors_); }
+  std::span<const EdgeVal> value_view() const { return mapping_ ? mapped_values_ : std::span<const EdgeVal>(vals_); }
+  std::shared_ptr<void> mapping_;
+  std::span<const std::size_t> mapped_offsets_;
+  std::span<const NodeId> mapped_nodes_;
+  std::span<const EdgeVal> mapped_values_;
+
   struct Entry {
     NodeId src;
     NodeId dst;

@@ -1,0 +1,1546 @@
+{
+  "protocol": {
+    "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "seed": 20261007,
+    "candidate_pool": 259,
+    "cases": 100,
+    "selection": "original QA, one named speaker, original evidence starts I/my and omits that speaker name; fixed random sample before outcomes; conversations 0\u20132 excluded",
+    "gold": "unchanged upstream evidence IDs; identity is grounded by dataset speaker annotation",
+    "scope": "speaker coreference QA; NOT 100 independently annotated alias/multi-turn identity chains",
+    "query": "original unedited benchmark question",
+    "metadata": "date, speaker name, original text and supplied caption are included equally in all production arms",
+    "limit": 16,
+    "graph_weight": 0.4,
+    "hops": 2,
+    "seed_count": 8,
+    "policy": "star current/prior-top-three/previous-session-turn",
+    "conditions": [
+      "lexical",
+      "associative",
+      "oracle",
+      "counterfactual",
+      "bridge_removed"
+    ],
+    "ablations": [
+      "adjacency_only",
+      "learned_only",
+      "shuffled"
+    ],
+    "controls": "oracle is supplied gold; counterfactual replaces source with another speaker source; bridge_removed drops a traversed non-target intermediate from the evidence packet, if any, with no backfill. Neither is an answer-score test without model calls.",
+    "answer_quality": "not evaluated",
+    "prior_exposure": "these conversations appeared in earlier project evaluation; not a new unseen corpus"
+  },
+  "membership": [
+    {
+      "id": "conv-42:q166",
+      "conversation": "conv-42",
+      "question_index": 166,
+      "gold": [
+        "D23:18"
+      ],
+      "speaker": "Joanna",
+      "references": [
+        "D23:18"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q2",
+      "conversation": "conv-49",
+      "question_index": 2,
+      "gold": [
+        "D1:2",
+        "D1:4",
+        "D2:1"
+      ],
+      "speaker": "Evan",
+      "references": [
+        "D1:4"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q78",
+      "conversation": "conv-42",
+      "question_index": 78,
+      "gold": [
+        "D10:4",
+        "D14:8",
+        "D17:1",
+        "D19:1",
+        "D1:3",
+        "D20:1",
+        "D22:2",
+        "D27:1",
+        "D6:7"
+      ],
+      "speaker": "Nate",
+      "references": [
+        "D14:8"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q56",
+      "conversation": "conv-47",
+      "question_index": 56,
+      "gold": [
+        "D17:28",
+        "D28:19"
+      ],
+      "speaker": "James",
+      "references": [
+        "D28:19"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q84",
+      "conversation": "conv-49",
+      "question_index": 84,
+      "gold": [
+        "D1:16"
+      ],
+      "speaker": "Evan",
+      "references": [
+        "D1:16"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q93",
+      "conversation": "conv-47",
+      "question_index": 93,
+      "gold": [
+        "D12:5",
+        "D12:6"
+      ],
+      "speaker": "John",
+      "references": [
+        "D12:6"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-50:q104",
+      "conversation": "conv-50",
+      "question_index": 104,
+      "gold": [
+        "D16:20"
+      ],
+      "speaker": "Calvin",
+      "references": [
+        "D16:20"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q19",
+      "conversation": "conv-47",
+      "question_index": 19,
+      "gold": [
+        "D9:16"
+      ],
+      "speaker": "James",
+      "references": [
+        "D9:16"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q17",
+      "conversation": "conv-44",
+      "question_index": 17,
+      "gold": [
+        "D11:7",
+        "D24:13",
+        "D26:20"
+      ],
+      "speaker": "Audrey",
+      "references": [
+        "D24:13"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q23",
+      "conversation": "conv-43",
+      "question_index": 23,
+      "gold": [
+        "D7:6"
+      ],
+      "speaker": "Tim",
+      "references": [
+        "D7:6"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q170",
+      "conversation": "conv-42",
+      "question_index": 170,
+      "gold": [
+        "D24:6"
+      ],
+      "speaker": "Joanna",
+      "references": [
+        "D24:6"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q121",
+      "conversation": "conv-48",
+      "question_index": 121,
+      "gold": [
+        "D9:14"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D9:14"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q66",
+      "conversation": "conv-42",
+      "question_index": 66,
+      "gold": [
+        "D19:3",
+        "D25:19",
+        "D28:25",
+        "D5:8"
+      ],
+      "speaker": "Nate",
+      "references": [
+        "D19:3"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q8",
+      "conversation": "conv-42",
+      "question_index": 8,
+      "gold": [
+        "D2:12"
+      ],
+      "speaker": "Nate",
+      "references": [
+        "D2:12"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q72",
+      "conversation": "conv-43",
+      "question_index": 72,
+      "gold": [
+        "D1:7"
+      ],
+      "speaker": "John",
+      "references": [
+        "D1:7"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-50:q105",
+      "conversation": "conv-50",
+      "question_index": 105,
+      "gold": [
+        "D16:20"
+      ],
+      "speaker": "Calvin",
+      "references": [
+        "D16:20"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q94",
+      "conversation": "conv-43",
+      "question_index": 94,
+      "gold": [
+        "D7:6"
+      ],
+      "speaker": "Tim",
+      "references": [
+        "D7:6"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q3",
+      "conversation": "conv-44",
+      "question_index": 3,
+      "gold": [
+        "D13:1",
+        "D23:3",
+        "D25:1",
+        "D27:1",
+        "D3:1",
+        "D3:11",
+        "D4:2",
+        "D6:1"
+      ],
+      "speaker": "Andrew",
+      "references": [
+        "D3:11"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-50:q24",
+      "conversation": "conv-50",
+      "question_index": 24,
+      "gold": [
+        "D13:7",
+        "D20:1",
+        "D22:5"
+      ],
+      "speaker": "Dave",
+      "references": [
+        "D13:7"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q144",
+      "conversation": "conv-48",
+      "question_index": 144,
+      "gold": [
+        "D16:6"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D16:6"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-50:q66",
+      "conversation": "conv-50",
+      "question_index": 66,
+      "gold": [
+        "D13:7",
+        "D20:1",
+        "D25:17",
+        "D27:10"
+      ],
+      "speaker": "Dave",
+      "references": [
+        "D13:7"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q50",
+      "conversation": "conv-43",
+      "question_index": 50,
+      "gold": [
+        "D18:2",
+        "D19:20"
+      ],
+      "speaker": "John",
+      "references": [
+        "D19:20"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q111",
+      "conversation": "conv-47",
+      "question_index": 111,
+      "gold": [
+        "D19:7"
+      ],
+      "speaker": "John",
+      "references": [
+        "D19:7"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q69",
+      "conversation": "conv-44",
+      "question_index": 69,
+      "gold": [
+        "D6:4"
+      ],
+      "speaker": "Audrey",
+      "references": [
+        "D6:4"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q91",
+      "conversation": "conv-42",
+      "question_index": 91,
+      "gold": [
+        "D9:14"
+      ],
+      "speaker": "Nate",
+      "references": [
+        "D9:14"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q73",
+      "conversation": "conv-47",
+      "question_index": 73,
+      "gold": [
+        "D3:5"
+      ],
+      "speaker": "John",
+      "references": [
+        "D3:5"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q104",
+      "conversation": "conv-47",
+      "question_index": 104,
+      "gold": [
+        "D16:11"
+      ],
+      "speaker": "James",
+      "references": [
+        "D16:11"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q163",
+      "conversation": "conv-42",
+      "question_index": 163,
+      "gold": [
+        "D23:17"
+      ],
+      "speaker": "Nate",
+      "references": [
+        "D23:17"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q67",
+      "conversation": "conv-44",
+      "question_index": 67,
+      "gold": [
+        "D5:7"
+      ],
+      "speaker": "Andrew",
+      "references": [
+        "D5:7"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q7",
+      "conversation": "conv-49",
+      "question_index": 7,
+      "gold": [
+        "D10:8",
+        "D13:6",
+        "D13:8",
+        "D1:11",
+        "D20:6",
+        "D21:19",
+        "D2:10",
+        "D7:2",
+        "D7:4",
+        "D7:6"
+      ],
+      "speaker": "Sam",
+      "references": [
+        "D20:6"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q42",
+      "conversation": "conv-48",
+      "question_index": 42,
+      "gold": [
+        "D11:10",
+        "D11:8"
+      ],
+      "speaker": "Deborah",
+      "references": [
+        "D11:8"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q43",
+      "conversation": "conv-42",
+      "question_index": 43,
+      "gold": [
+        "D17:14",
+        "D22:9"
+      ],
+      "speaker": "Joanna",
+      "references": [
+        "D17:14",
+        "D22:9"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q42",
+      "conversation": "conv-44",
+      "question_index": 42,
+      "gold": [
+        "D26:5",
+        "D6:4"
+      ],
+      "speaker": "Audrey",
+      "references": [
+        "D6:4"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q147",
+      "conversation": "conv-43",
+      "question_index": 147,
+      "gold": [
+        "D21:11"
+      ],
+      "speaker": "Tim",
+      "references": [
+        "D21:11"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q26",
+      "conversation": "conv-47",
+      "question_index": 26,
+      "gold": [
+        "D16:9",
+        "D17:22",
+        "D6:12",
+        "D6:14"
+      ],
+      "speaker": "James",
+      "references": [
+        "D16:9",
+        "D6:12"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q29",
+      "conversation": "conv-44",
+      "question_index": 29,
+      "gold": [
+        "D19:12",
+        "D1:7",
+        "D2:1"
+      ],
+      "speaker": "Audrey",
+      "references": [
+        "D1:7"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q50",
+      "conversation": "conv-48",
+      "question_index": 50,
+      "gold": [
+        "D13:17"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D13:17"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q54",
+      "conversation": "conv-44",
+      "question_index": 54,
+      "gold": [
+        "D10:7",
+        "D13:8",
+        "D23:14",
+        "D27:12",
+        "D4:21"
+      ],
+      "speaker": "Audrey",
+      "references": [
+        "D23:14"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q16",
+      "conversation": "conv-42",
+      "question_index": 16,
+      "gold": [
+        "D7:1",
+        "D7:3"
+      ],
+      "speaker": "Nate",
+      "references": [
+        "D7:3"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q119",
+      "conversation": "conv-43",
+      "question_index": 119,
+      "gold": [
+        "D14:16"
+      ],
+      "speaker": "Tim",
+      "references": [
+        "D14:16"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q109",
+      "conversation": "conv-48",
+      "question_index": 109,
+      "gold": [
+        "D5:5"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D5:5"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q136",
+      "conversation": "conv-48",
+      "question_index": 136,
+      "gold": [
+        "D14:15"
+      ],
+      "speaker": "Deborah",
+      "references": [
+        "D14:15"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q74",
+      "conversation": "conv-44",
+      "question_index": 74,
+      "gold": [
+        "D7:8"
+      ],
+      "speaker": "Andrew",
+      "references": [
+        "D7:8"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q70",
+      "conversation": "conv-43",
+      "question_index": 70,
+      "gold": [
+        "D1:18",
+        "D27:21",
+        "D28:1"
+      ],
+      "speaker": "Tim",
+      "references": [
+        "D1:18"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q156",
+      "conversation": "conv-48",
+      "question_index": 156,
+      "gold": [
+        "D20:19"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D20:19"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q155",
+      "conversation": "conv-49",
+      "question_index": 155,
+      "gold": [
+        "D25:10"
+      ],
+      "speaker": "Evan",
+      "references": [
+        "D25:10"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q34",
+      "conversation": "conv-43",
+      "question_index": 34,
+      "gold": [
+        "D11:19",
+        "D26:1",
+        "D27:26"
+      ],
+      "speaker": "John",
+      "references": [
+        "D11:19"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q50",
+      "conversation": "conv-49",
+      "question_index": 50,
+      "gold": [
+        "D1:14",
+        "D1:6",
+        "D25:10",
+        "D25:8",
+        "D4:8",
+        "D6:1",
+        "D8:30",
+        "D9:6"
+      ],
+      "speaker": "Evan",
+      "references": [
+        "D25:10"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q101",
+      "conversation": "conv-47",
+      "question_index": 101,
+      "gold": [
+        "D16:8"
+      ],
+      "speaker": "John",
+      "references": [
+        "D16:8"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q26",
+      "conversation": "conv-43",
+      "question_index": 26,
+      "gold": [
+        "D17:1",
+        "D17:11",
+        "D26:36"
+      ],
+      "speaker": "Tim",
+      "references": [
+        "D26:36"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q127",
+      "conversation": "conv-48",
+      "question_index": 127,
+      "gold": [
+        "D11:9"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D11:9"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q35",
+      "conversation": "conv-44",
+      "question_index": 35,
+      "gold": [
+        "D12:1",
+        "D24:6",
+        "D28:8"
+      ],
+      "speaker": "Andrew",
+      "references": [
+        "D24:6"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q130",
+      "conversation": "conv-48",
+      "question_index": 130,
+      "gold": [
+        "D12:3"
+      ],
+      "speaker": "Deborah",
+      "references": [
+        "D12:3"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q115",
+      "conversation": "conv-49",
+      "question_index": 115,
+      "gold": [
+        "D11:6"
+      ],
+      "speaker": "Evan",
+      "references": [
+        "D11:6"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q55",
+      "conversation": "conv-43",
+      "question_index": 55,
+      "gold": [
+        "D1:3",
+        "D21:4"
+      ],
+      "speaker": "John",
+      "references": [
+        "D21:4"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q7",
+      "conversation": "conv-44",
+      "question_index": 7,
+      "gold": [
+        "D1:7",
+        "D2:1"
+      ],
+      "speaker": "Audrey",
+      "references": [
+        "D1:7"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-50:q21",
+      "conversation": "conv-50",
+      "question_index": 21,
+      "gold": [
+        "D12:11",
+        "D27:1"
+      ],
+      "speaker": "Calvin",
+      "references": [
+        "D12:11"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q178",
+      "conversation": "conv-42",
+      "question_index": 178,
+      "gold": [
+        "D25:10"
+      ],
+      "speaker": "Joanna",
+      "references": [
+        "D25:10"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-50:q92",
+      "conversation": "conv-50",
+      "question_index": 92,
+      "gold": [
+        "D12:11"
+      ],
+      "speaker": "Calvin",
+      "references": [
+        "D12:11"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q63",
+      "conversation": "conv-42",
+      "question_index": 63,
+      "gold": [
+        "D10:6",
+        "D1:7",
+        "D23:17",
+        "D27:1",
+        "D27:23"
+      ],
+      "speaker": "Nate",
+      "references": [
+        "D23:17"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q24",
+      "conversation": "conv-47",
+      "question_index": 24,
+      "gold": [
+        "D13:7",
+        "D1:4",
+        "D27:2"
+      ],
+      "speaker": "James",
+      "references": [
+        "D1:4"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q17",
+      "conversation": "conv-48",
+      "question_index": 17,
+      "gold": [
+        "D2:24"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D2:24"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q89",
+      "conversation": "conv-47",
+      "question_index": 89,
+      "gold": [
+        "D10:12"
+      ],
+      "speaker": "John",
+      "references": [
+        "D10:12"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q91",
+      "conversation": "conv-48",
+      "question_index": 91,
+      "gold": [
+        "D11:10",
+        "D11:8"
+      ],
+      "speaker": "Deborah",
+      "references": [
+        "D11:8"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q40",
+      "conversation": "conv-43",
+      "question_index": 40,
+      "gold": [
+        "D14:16"
+      ],
+      "speaker": "Tim",
+      "references": [
+        "D14:16"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q4",
+      "conversation": "conv-43",
+      "question_index": 4,
+      "gold": [
+        "D11:26",
+        "D1:14",
+        "D20:21",
+        "D22:13",
+        "D26:36",
+        "D2:7",
+        "D6:8"
+      ],
+      "speaker": "Tim",
+      "references": [
+        "D22:13",
+        "D26:36"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q13",
+      "conversation": "conv-48",
+      "question_index": 13,
+      "gold": [
+        "D19:17",
+        "D2:13",
+        "D4:34",
+        "D6:10"
+      ],
+      "speaker": "Deborah",
+      "references": [
+        "D19:17",
+        "D6:10"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q142",
+      "conversation": "conv-49",
+      "question_index": 142,
+      "gold": [
+        "D21:16"
+      ],
+      "speaker": "Evan",
+      "references": [
+        "D21:16"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q161",
+      "conversation": "conv-43",
+      "question_index": 161,
+      "gold": [
+        "D26:21"
+      ],
+      "speaker": "John",
+      "references": [
+        "D26:21"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-50:q96",
+      "conversation": "conv-50",
+      "question_index": 96,
+      "gold": [
+        "D13:7"
+      ],
+      "speaker": "Dave",
+      "references": [
+        "D13:7"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q75",
+      "conversation": "conv-47",
+      "question_index": 75,
+      "gold": [
+        "D4:16"
+      ],
+      "speaker": "James",
+      "references": [
+        "D4:16"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q18",
+      "conversation": "conv-48",
+      "question_index": 18,
+      "gold": [
+        "D2:24"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D2:24"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q73",
+      "conversation": "conv-44",
+      "question_index": 73,
+      "gold": [
+        "D7:8"
+      ],
+      "speaker": "Andrew",
+      "references": [
+        "D7:8"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q150",
+      "conversation": "conv-48",
+      "question_index": 150,
+      "gold": [
+        "D19:8"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D19:8"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q190",
+      "conversation": "conv-48",
+      "question_index": 190,
+      "gold": [
+        "D30:1"
+      ],
+      "speaker": "Deborah",
+      "references": [
+        "D30:1"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q71",
+      "conversation": "conv-44",
+      "question_index": 71,
+      "gold": [
+        "D6:4"
+      ],
+      "speaker": "Audrey",
+      "references": [
+        "D6:4"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q0",
+      "conversation": "conv-47",
+      "question_index": 0,
+      "gold": [
+        "D1:27"
+      ],
+      "speaker": "John",
+      "references": [
+        "D1:27"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q104",
+      "conversation": "conv-43",
+      "question_index": 104,
+      "gold": [
+        "D10:8"
+      ],
+      "speaker": "John",
+      "references": [
+        "D10:8"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q44",
+      "conversation": "conv-47",
+      "question_index": 44,
+      "gold": [
+        "D21:12",
+        "D21:14"
+      ],
+      "speaker": "John",
+      "references": [
+        "D21:14"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q142",
+      "conversation": "conv-48",
+      "question_index": 142,
+      "gold": [
+        "D15:20"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D15:20"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q151",
+      "conversation": "conv-42",
+      "question_index": 151,
+      "gold": [
+        "D19:9"
+      ],
+      "speaker": "Nate",
+      "references": [
+        "D19:9"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q120",
+      "conversation": "conv-47",
+      "question_index": 120,
+      "gold": [
+        "D23:10"
+      ],
+      "speaker": "John",
+      "references": [
+        "D23:10"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q4",
+      "conversation": "conv-47",
+      "question_index": 4,
+      "gold": [
+        "D3:5"
+      ],
+      "speaker": "John",
+      "references": [
+        "D3:5"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q56",
+      "conversation": "conv-43",
+      "question_index": 56,
+      "gold": [
+        "D21:13"
+      ],
+      "speaker": "Tim",
+      "references": [
+        "D21:13"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q140",
+      "conversation": "conv-43",
+      "question_index": 140,
+      "gold": [
+        "D19:10"
+      ],
+      "speaker": "John",
+      "references": [
+        "D19:10"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q159",
+      "conversation": "conv-48",
+      "question_index": 159,
+      "gold": [
+        "D21:8"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D21:8"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q35",
+      "conversation": "conv-43",
+      "question_index": 35,
+      "gold": [
+        "D12:6",
+        "D3:27"
+      ],
+      "speaker": "John",
+      "references": [
+        "D3:27"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q19",
+      "conversation": "conv-43",
+      "question_index": 19,
+      "gold": [
+        "D3:13",
+        "D3:15",
+        "D6:15"
+      ],
+      "speaker": "John",
+      "references": [
+        "D3:13"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-47:q57",
+      "conversation": "conv-47",
+      "question_index": 57,
+      "gold": [
+        "D28:19"
+      ],
+      "speaker": "James",
+      "references": [
+        "D28:19"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q82",
+      "conversation": "conv-48",
+      "question_index": 82,
+      "gold": [
+        "D2:11",
+        "D2:13",
+        "D3:6",
+        "D4:12",
+        "D6:10"
+      ],
+      "speaker": "Deborah",
+      "references": [
+        "D6:10"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q0",
+      "conversation": "conv-49",
+      "question_index": 0,
+      "gold": [
+        "D18:1",
+        "D18:3",
+        "D1:2",
+        "D1:4",
+        "D22:2"
+      ],
+      "speaker": "Evan",
+      "references": [
+        "D1:4"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q44",
+      "conversation": "conv-49",
+      "question_index": 44,
+      "gold": [
+        "D20:13",
+        "D20:15",
+        "D21:10",
+        "D21:14",
+        "D8:20"
+      ],
+      "speaker": "Evan",
+      "references": [
+        "D8:20"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-44:q14",
+      "conversation": "conv-44",
+      "question_index": 14,
+      "gold": [
+        "D3:7",
+        "D9:20"
+      ],
+      "speaker": "Andrew",
+      "references": [
+        "D3:7"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-42:q26",
+      "conversation": "conv-42",
+      "question_index": 26,
+      "gold": [
+        "D14:8"
+      ],
+      "speaker": "Nate",
+      "references": [
+        "D14:8"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q61",
+      "conversation": "conv-48",
+      "question_index": 61,
+      "gold": [
+        "D22:10",
+        "D22:12"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D22:10"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q140",
+      "conversation": "conv-49",
+      "question_index": 140,
+      "gold": [
+        "D21:16"
+      ],
+      "speaker": "Evan",
+      "references": [
+        "D21:16"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-49:q26",
+      "conversation": "conv-49",
+      "question_index": 26,
+      "gold": [
+        "D5:11",
+        "D5:13",
+        "D5:9"
+      ],
+      "speaker": "Evan",
+      "references": [
+        "D5:13"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-48:q53",
+      "conversation": "conv-48",
+      "question_index": 53,
+      "gold": [
+        "D16:6",
+        "D28:26"
+      ],
+      "speaker": "Jolene",
+      "references": [
+        "D16:6"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q81",
+      "conversation": "conv-43",
+      "question_index": 81,
+      "gold": [
+        "D3:27"
+      ],
+      "speaker": "John",
+      "references": [
+        "D3:27"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    },
+    {
+      "id": "conv-43:q133",
+      "conversation": "conv-43",
+      "question_index": 133,
+      "gold": [
+        "D17:3"
+      ],
+      "speaker": "John",
+      "references": [
+        "D17:3"
+      ],
+      "reference_kind": "first-person pronoun to dataset speaker annotation",
+      "multi_turn_alias_validated": false
+    }
+  ]
+}

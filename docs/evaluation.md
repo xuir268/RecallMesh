@@ -2,7 +2,13 @@
 
 Research inspiration: [HeLa-Mem](research.md). The reported results below belong to RecallMesh, not the paper.
 
-## Framework checks
+## Latest natural-reference and storage evidence
+
+The [October 7 natural-reference study](natural-evaluation.md) uses 100 original LoCoMo QA with speaker-grounded I/my references. Evidence recall @16 is 52.08% BM25, 58.31% graph, 57.89% adjacency-only. This is narrower than a verified multi-turn alias benchmark and does not establish a distinctive co-activation benefit or agent answer gains. The separate pronoun screen remains unreviewed.
+
+See [mapped recovery](recovery.md) and [shared native-graph contention](concurrency.md). Current validation covers 69 Python tests, three UBSan native tests, and 45 exact native contention workloads. Local TSan fails during initialization; Linux CI must be verified independently.
+
+## Earlier framework checks
 
 Local validation on October 6, 2026: 58 Python tests and 2 native CTests passed. Wheel and source archive built successfully. Tests cover restart preservation of associations and ticks, stable IDs after deletion, rejection rollback, eviction, TTL, UTF-8 byte quotas, graph growth, database limits, stale-cache refresh, independent CLI processes, malformed/oversized JSON, and agent pipeline integration. ThreadSanitizer could not initialize on this machine; no TSan-clean claim is made.
 
@@ -42,6 +48,6 @@ Use `remember` for observations, `recall` before model calls, and preserve recor
 - Co-activation edges are untyped and can connect irrelevant records. The support checker is another fallible model, not a proof of correctness.
 - Graph traversal has bounded work but still reads adjacency entries. No zero-latency or universal HPC-performance claim is made.
 - Resource quotas cover records, text, main database file, and graph slots; additional indexes, snapshots, rebuilds, journals, and VACUUM need RAM/disk.
-- Startup and growth replay association history. There is no event checkpoint folding or persistent mmap CSR yet.
+- Restart can use a matching persisted mmap checkpoint, otherwise replaying association history. Growth still replays; there is no tail-replay or event-history truncation yet.
 - Concurrent clients share serialized SQLite writes; this is not a distributed or tenant-isolated service.
-- Go/MCP/gRPC, production ANN, hub detection, and background distillation shown in the proposal are future work.
+- Go/MCP/gRPC, production ANN, a multi-segment LSM hierarchy, hub detection, and background distillation shown in the proposal are future work.
