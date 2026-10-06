@@ -28,7 +28,7 @@ The agent layer adds bounded missing-fact searches, joint selection of supportin
 
 ![Proposed architecture](docs/assets/architecture-proposal.png)
 
-This diagram is the proposed architecture. The current implementation uses a Python/JSON control layer, BM25 seeds and graph walks, a C++ atomic edge table, in-memory CSR snapshots, and a durable SQLite association log. Go, MCP, gRPC, production ANN, mmap segments, hub detection, and background distillation are planned, not implemented.
+This diagram is the proposed architecture. The current implementation uses a Python/JSON control layer, BM25 seeds and graph walks, a C++ atomic edge table, in-memory CSR snapshots, and a durable SQLite association log. Python, MCP, gRPC, production ANN, mmap segments, hub detection, and background distillation are planned, not implemented.
 
 See [architecture status](docs/architecture.md), [test results and limitations](docs/evaluation.md), and [agent integration](docs/framework.md). The legacy `assoc_mem` imports and `assoc-memory` command remain compatible.
 
