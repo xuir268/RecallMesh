@@ -1,7 +1,7 @@
 # Reconstructed commit history
 
-The reconstructed history was created on a separate branch on October 6, 2026 from the existing RecallMesh implementation. Its September–October author and committer dates were assigned retrospectively at the project owner's request. They are organizational milestones, not evidence that development occurred on those dates. Both dates in each commit are reconstructed. It was subsequently merged into main without rewriting the original publication commits.
+This repository contains retrospectively organized history created on October 6, 2026 at the project owner's request. The latest reconstruction assigns author and committer dates to every day from September 16 through October 6, 2026 (Asia/Kolkata), with more than one milestone on selected days. These timestamps are organizational labels, not evidence that development occurred on those dates.
 
-The reconstructed history splits the existing implementation into reviewable groups with gaps between dates and several days containing multiple commits. Some intermediate milestones require later groups to build or run; only the complete final tree is validated. No new model evaluation is implied by these timestamps.
+Every reconstructed commit is explicitly labeled `[Reconstructed]`. Existing implementation files were split into reviewable milestones; no work or testing on a historical date is implied. Intermediate snapshots may depend on later milestones to build or run. The complete final implementation has the recorded current test coverage.
 
-The October 20 scheduled progress automation was paused when the owner replaced that schedule with this reconstruction.
+The original publication commits and earlier reconstructed milestones are preserved. A merge adds this daily reconstruction to `main` without rewriting or force-pushing the published history. Only `main` is published as a branch. No new model evaluation is implied. The October 20 scheduled automation remains paused.
