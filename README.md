@@ -16,6 +16,10 @@ Associative memory layer. Associations are not synthesised — they form from
 usage, via Hebbian co-activation, and decay when unused.
 
 
+## Research source
+
+Inspired by [HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](https://arxiv.org/abs/2604.16839) (Zhu et al., 2026). See [research attribution and implementation differences](docs/research.md). RecallMesh is an independent implementation; its results are reported separately from the paper.
+
 ## Architecture and evidence
 
 ![Proposed architecture](docs/assets/architecture-proposal.png)

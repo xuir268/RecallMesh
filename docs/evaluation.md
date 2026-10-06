@@ -1,8 +1,12 @@
 # Test results, agent impact, and limitations
 
+Research inspiration: [HeLa-Mem](research.md). The reported results below belong to RecallMesh, not the paper.
+
 ## Framework checks
 
 Local validation on October 6, 2026: 58 Python tests and 2 native CTests passed. Wheel and source archive built successfully. Tests cover restart preservation of associations and ticks, stable IDs after deletion, rejection rollback, eviction, TTL, UTF-8 byte quotas, graph growth, database limits, stale-cache refresh, independent CLI processes, malformed/oversized JSON, and agent pipeline integration. ThreadSanitizer could not initialize on this machine; no TSan-clean claim is made.
+
+[Latest executed test output](validation-latest.md): 58 Python tests and 2 native tests passed after the documentation and branch update.
 
 These checks establish implementation behavior. They do not establish improved model answers.
 

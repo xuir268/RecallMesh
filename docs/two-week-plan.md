@@ -8,4 +8,4 @@ The dedicated project repository is https://github.com/xuir268/RecallMesh, with 
 
 ## Schedule superseded
 
-On October 6 the owner replaced this future schedule with the labeled reconstruction on `codex/reconstructed-sep-oct-2026`. The daily automation is paused; this earlier plan is retained as historical context.
+On October 6 the owner replaced this future schedule with the labeled reconstruction on `reconstructed-sep-oct-2026`. The daily automation is paused; this earlier plan is retained as historical context.
