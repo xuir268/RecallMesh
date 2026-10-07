@@ -35,6 +35,8 @@ See [architecture status](docs/architecture.md), [test results and limitations](
 
 ## Latest evidence — October 7, 2026
 
+- [Medium Astra/Claude answer test](docs/medium-answer-evaluation.md): 20 questions, 120 first-attempt answers with adjacency, session-50 Hebbian, and oracle evidence. Hebbian mean answer-F1 was lower for both models; no reliable improvement was established. Oracle evidence improved mean F1, with scoring and source-annotation limits documented.
+
 - [Small Astra/Claude answer pilot](docs/small-answer-evaluation.md): six fixed questions, 24 answers. Both models answered 1/6 correctly in each condition under post-hoc review; no observed advantage from the session-50 Hebbian graph.
 
 - [Preregistered longitudinal test](docs/longitudinal.md): graph recall fell from 58.46% after one use session to 53.39% after 50; frozen adjacency remained 57.89%. The stopping rule failed. New CLI setups use adjacency; Hebbian learning stays experimental.

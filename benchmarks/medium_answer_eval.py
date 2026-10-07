@@ -34,6 +34,15 @@ def prepare():
     (ROOT/'benchmarks/protocols/medium-answer-inputs-v1.json').write_text(json.dumps(hashes,indent=2)+'\n')
 
 def score():
+    locked=json.loads((ROOT/'benchmarks/protocols/medium-answer-inputs-v1.json').read_text())
+    protocol=json.loads(runner.PROTOCOL.read_text())
+    for backend in ['codex','claude']:
+        rows=[json.loads(p.read_text()) for p in (runner.OUT/backend).glob('*.json')]
+        assert len(rows)==len(locked)==60
+        assert {r['id'] for r in rows}==set(locked)
+        for row in rows:
+            assert row['input_sha256']==locked[row['id']]
+            assert row['requested_model']==protocol['models'][backend]
     runner.score()
     result=json.loads(RESULTS.read_text())
     paired={}
@@ -46,6 +55,20 @@ def score():
         values=list(cases.values())
         mean=float(np.mean([r['hebbian_50']-r['adjacency'] for r in values]));ci=interval(values,'hebbian_50','adjacency')
         paired[backend]={'hebbian_minus_adjacency_f1':mean,'cluster95':ci,'positive_signal':mean>=.05 and ci[0]>0,'oracle_minus_adjacency_f1':float(np.mean([r['oracle']-r['adjacency'] for r in values]))}
+    jobs={j['id']:j for j in json.loads((runner.OUT/'jobs.json').read_text())}
+    for backend,rows in result['per_call'].items():
+        for row in rows:
+            job=jobs[row['id']]
+            row['category']=job['category']
+            row['evidence_recall']=len(set(job['required']) & {e['id'] for e in job['evidence']})/len(set(job['required']))
+        for arm,summary in result['summary'][backend].items():
+            selected=[r for r in rows if r['arm']==arm]
+            summary['mean_evidence_recall']=float(np.mean([r['evidence_recall'] for r in selected]))
+            summary['by_category']={str(c):{'n':sum(r['category']==c for r in selected),'mean_answer_f1':float(np.mean([r['answer_f1'] for r in selected if r['category']==c]))} for c in [1,2,3,4]}
+    result['runtime']={}
+    for backend in ['codex','claude']:
+        originals=[json.loads(p.read_text()) for p in (runner.OUT/backend).glob('*.json')]
+        result['runtime'][backend]={'calls':len(originals),'sum_call_seconds':sum(r['completion'].get('seconds',0) for r in originals),'reported_cost_usd':sum(r['completion'].get('estimated_cost_usd') or 0 for r in originals) if backend=='claude' else None}
     result['paired']=paired;result['positive_both_models']=all(r['positive_signal'] for r in paired.values())
     RESULTS.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(paired,indent=2))
