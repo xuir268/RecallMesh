@@ -1,0 +1,26 @@
+{
+  "seed": 20261007,
+  "case_ids": [
+    "conv-43:q70",
+    "conv-44:q74",
+    "conv-42:q66",
+    "conv-44:q35",
+    "conv-48:q50",
+    "conv-48:q61"
+  ],
+  "arms": [
+    "adjacency",
+    "hebbian_50"
+  ],
+  "models": {
+    "codex": "gpt-6-astra",
+    "claude": "claude-sonnet-4-6"
+  },
+  "calls": 24,
+  "budget": 16,
+  "effort": "medium",
+  "selection": "random six from fixed 100-question cohort; no gain/loss selection",
+  "scoring": "upstream-style token F1 primary; exact F1=1 and required-source citation coverage secondary. Citation coverage is a provenance proxy, not semantic entailment.",
+  "policy": "first attempts, no retries, no tools, fresh sessions, fixed prompt, gold labels withheld; same retrieval settings and replay as longitudinal-v1",
+  "scope": "small previously exposed cohort; no superiority or statistical-significance claim"
+}
