@@ -2,15 +2,66 @@
 
 October 7, 2026. **20 fixed questions, three evidence conditions, two models: 120 first-attempt answers.** Five questions per category (multi-hop, temporal, open-domain inference, single-hop); the six-question pilot was excluded. All seven eligible conversations are represented. The primary measure is token F1, not an independently adjudicated correctness rate.
 
-| Model | Adjacency mean F1 | Hebbian session-50 mean F1 | Oracle mean F1 |
-|---|---:|---:|---:|
-| Astra | 31.69% | 30.14% | 45.04% |
-| Claude Sonnet 4.6 | 40.96% | 36.01% | 47.70% |
+| Model | Condition | Mean F1 | Abstentions |
+|---|---|---:|---:|
+| Astra | adjacency | 31.69% | 9/20 |
+| Astra | hebbian_50 | 30.14% | 8/20 |
+| Astra | oracle | 45.04% | 4/20 |
+| Claude Sonnet 4.6 | adjacency | 40.96% | 6/20 |
+| Claude Sonnet 4.6 | hebbian_50 | 36.01% | 7/20 |
+| Claude Sonnet 4.6 | oracle | 47.70% | 2/20 |
 
 ## Paired comparison
 
 - Astra: Hebbian minus adjacency **-1.56 percentage points**; paired conversation-cluster bootstrap 95% interval **[-6.47, +1.90] points**. Oracle minus adjacency: +13.35 points.
 - Claude: Hebbian minus adjacency **-4.96 percentage points**; paired conversation-cluster bootstrap 95% interval **[-23.41, +3.58] points**. Oracle minus adjacency: +6.74 points.
+
+## Paired signs and distributions — added October 8
+
+These diagnostics use the original saved scores with no new model calls. Wins and losses refer to token-F1 differences, not independently adjudicated semantic correctness. They are post-hoc; the registered decision rule remains unchanged.
+
+| Model / candidate vs adjacency | Wins | Ties | Losses | Exact sign p | Holm-adjusted p |
+|---|---:|---:|---:|---:|---:|
+| Astra / hebbian_50 | 5 | 14 | 1 | 0.2188 | 0.5840 |
+| Astra / oracle | 9 | 8 | 3 | 0.1460 | 0.5840 |
+| Claude / hebbian_50 | 7 | 11 | 2 | 0.1797 | 0.5840 |
+| Claude / oracle | 7 | 10 | 3 | 0.3438 | 0.5840 |
+
+Two-sided exact binomial sign tests exclude ties (absolute F1 difference ≤1e-12). The four exploratory question-level tests are Holm-adjusted together. Their nominal p values assume independent signs; these questions share seven conversations, so question-level p values are not cluster-robust. As a separate sensitivity analysis, signs of equal-weight conversation mean deltas give:
+
+| Model / candidate | Positive / tied / negative conversations | Conversation-level exact p |
+|---|---:|---:|
+| Astra / hebbian_50 | 3 / 3 / 1 | 0.6250 |
+| Astra / oracle | 5 / 0 / 2 | 0.4531 |
+| Claude / hebbian_50 | 2 / 3 / 2 | 1.0000 |
+| Claude / oracle | 3 / 2 / 2 | 1.0000 |
+
+Seven conversations give little power; the conversation tests are also exploratory and unadjusted. Neither level establishes a significant sign advantage here. A majority of positive question signs does not guarantee a positive mean: small wording gains can be outweighed by one large loss.
+
+Distribution of paired deltas in **F1 percentage points** (candidate minus adjacency):
+
+| Model / candidate | Minimum | 25th percentile | Median | 75th percentile | Maximum |
+|---|---:|---:|---:|---:|---:|
+| Astra / hebbian_50 | -87.50 | +0.00 | +0.00 | +0.40 | +40.00 |
+| Astra / oracle | -49.35 | +0.00 | +0.00 | +25.52 | +94.00 |
+| Claude / hebbian_50 | -100.00 | +0.00 | +0.00 | +2.92 | +50.00 |
+| Claude / oracle | -86.67 | +0.00 | +0.00 | +12.55 | +89.00 |
+
+[Every paired per-question delta and abstention flag (CSV)](assets/medium-answer-paired-deltas.csv) is published; identifiers and metrics contain no raw dialogue. The JSON includes the same per-question records and transition breakdown.
+
+## Abstention transitions
+
+| Model / candidate | Abstain → answer | Answer → abstain | Answer → answer | Abstain → abstain |
+|---|---:|---:|---:|---:|
+| Astra / hebbian_50 | 2 | 1 | 10 | 7 |
+| Astra / oracle | 5 | 0 | 11 | 4 |
+| Claude / hebbian_50 | 2 | 3 | 11 | 4 |
+| Claude / oracle | 4 | 0 | 14 | 2 |
+
+For Astra, oracle converted five adjacency abstentions into answers; all five increased F1. Those conversions contribute **+12.23 points** of the **+13.35-point** mean gain; changes where both conditions answered contribute +1.11 points. For Claude, oracle converted four abstentions: three increased F1 and one remained at zero. Conversions contribute **+8.04 points**, partly offset by **−1.30 points** where both conditions answered, leaving +6.74 points overall. No oracle answer reverted to abstention.
+
+This is an arithmetic decomposition of observed F1 gain, not a causal mediation estimate or proof that every new answer was correct. Hebbian evidence also converted two abstentions for each model, but introduced one new abstention for Astra and three for Claude; these larger losses outweighed its smaller gains.
+
 
 The preregistered positive-signal rule required at least +5 F1 points and a positive confidence lower bound for both models. **It did not pass. A reliable answer-quality advantage remains unestablished.** Adjacency remains the recommended profile.
 
@@ -50,6 +101,7 @@ With 20 questions and seven conversation clusters, uncertainty remains large. Ca
 .venv/bin/python benchmarks/medium_answer_eval.py run --backend codex
 .venv/bin/python benchmarks/medium_answer_eval.py run --backend claude
 .venv/bin/python benchmarks/medium_answer_eval.py score
+.venv/bin/python benchmarks/paired_answer_analysis.py
 .venv/bin/python benchmarks/medium_answer_report.py
 ```
 

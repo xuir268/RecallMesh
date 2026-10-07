@@ -7,6 +7,7 @@ from pathlib import Path
 import numpy as np
 import small_answer_eval as runner
 from longitudinal import interval
+from paired_answer_analysis import analyze
 
 ROOT=Path(__file__).resolve().parents[1]
 runner.OUT=ROOT/'benchmarks/results/medium-answer'
@@ -70,6 +71,7 @@ def score():
         originals=[json.loads(p.read_text()) for p in (runner.OUT/backend).glob('*.json')]
         result['runtime'][backend]={'calls':len(originals),'sum_call_seconds':sum(r['completion'].get('seconds',0) for r in originals),'reported_cost_usd':sum(r['completion'].get('estimated_cost_usd') or 0 for r in originals) if backend=='claude' else None}
     result['paired']=paired;result['positive_both_models']=all(r['positive_signal'] for r in paired.values())
+    result['paired_distribution']=analyze(result)
     RESULTS.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(paired,indent=2))
 
