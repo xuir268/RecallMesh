@@ -17,6 +17,12 @@ DEFAULT_CONFIG = {
 }
 
 
+# New CLI setups use the evaluated conservative profile. Keep v1 defaults
+# above for backward-compatible loading of existing partial configurations.
+PRODUCT_CONFIG = deepcopy(DEFAULT_CONFIG)
+PRODUCT_CONFIG['graph'].update(edge_policy='adjacent', **{'lambda': 0.0})
+
+
 class ConfigError(ValueError):
     pass
 

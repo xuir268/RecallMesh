@@ -14,8 +14,7 @@ recallmesh recall --query "Where is Mira’s token?"
 
 See [the framework guide](docs/framework.md) for agent integration, persistent Astra/Claude chat, quotas, growth, and retention. See [the example config](configs/memory.example.json) and [third-party licenses](THIRD_PARTY_NOTICES.md). Resource limits do not constitute a total process-RAM cap.
 
-Associative memory layer. Associations are not synthesised — they form from
-usage, via Hebbian co-activation, and decay when unused.
+New CLI setups use adjacency retrieval with decay disabled. Hebbian co-activation is experimental: the fixed longitudinal test did not improve with repeated use. Existing configurations keep their previous settings.
 
 
 ## Research source
@@ -35,6 +34,8 @@ This diagram is the proposed architecture. The current implementation uses a Pyt
 See [architecture status](docs/architecture.md), [test results and limitations](docs/evaluation.md), and [agent integration](docs/framework.md). The legacy `assoc_mem` imports and `assoc-memory` command remain compatible.
 
 ## Latest evidence — October 7, 2026
+
+- [Preregistered longitudinal test](docs/longitudinal.md): graph recall fell from 58.46% after one use session to 53.39% after 50; frozen adjacency remained 57.89%. The stopping rule failed. New CLI setups use adjacency; Hebbian learning stays experimental.
 
 - [100 original LoCoMo speaker-coreference questions](docs/natural-evaluation.md): gold evidence recall @16 was 52.08% for BM25 and 58.31% for the graph. Adjacency-only reached 57.89%; a distinctive co-activation advantage is not established. This is not 100 validated multi-turn aliases.
 - A separate 100-candidate pronoun screen is explicitly unreviewed and strongly biased toward adjacency; its large gain is not used as an identity-resolution headline.

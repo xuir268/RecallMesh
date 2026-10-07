@@ -4,7 +4,7 @@ import json
 import sys
 import sqlite3
 from pathlib import Path
-from .config import DEFAULT_CONFIG,MemoryConfig,ConfigError
+from .config import PRODUCT_CONFIG,MemoryConfig,ConfigError
 from .framework import ManagedMemory,QuotaExceeded
 
 COMMANDS={'init','serve','remember','recall','get','forget','associate','advance','stats','compact','checkpoint'}
@@ -67,7 +67,7 @@ def main(argv=None):
     try:
         if args.command=='init':
             path=Path(args.config);path.parent.mkdir(parents=True,exist_ok=True)
-            with path.open('x') as f:json.dump(DEFAULT_CONFIG,f,indent=2);f.write('\n')
+            with path.open('x') as f:json.dump(PRODUCT_CONFIG,f,indent=2);f.write('\n')
             print(json.dumps({'ok':True,'result':{'config':str(path.resolve())}}));return
         config=MemoryConfig.load(args.config)
         with ManagedMemory(config) as memory:
