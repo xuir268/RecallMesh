@@ -35,6 +35,8 @@ See [architecture status](docs/architecture.md), [test results and limitations](
 
 ## Latest evidence — October 7, 2026
 
+- [Small Astra/Claude answer pilot](docs/small-answer-evaluation.md): six fixed questions, 24 answers. Both models answered 1/6 correctly in each condition under post-hoc review; no observed advantage from the session-50 Hebbian graph.
+
 - [Preregistered longitudinal test](docs/longitudinal.md): graph recall fell from 58.46% after one use session to 53.39% after 50; frozen adjacency remained 57.89%. The stopping rule failed. New CLI setups use adjacency; Hebbian learning stays experimental.
 
 - [100 original LoCoMo speaker-coreference questions](docs/natural-evaluation.md): gold evidence recall @16 was 52.08% for BM25 and 58.31% for the graph. Adjacency-only reached 57.89%; a distinctive co-activation advantage is not established. This is not 100 validated multi-turn aliases.

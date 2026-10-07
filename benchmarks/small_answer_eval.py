@@ -70,7 +70,11 @@ def run(backend):
     jobs=json.loads((OUT/'jobs.json').read_text());random.Random(20261008).shuffle(jobs)
     def one(job):
         path=folder/(job['id']+'.json')
-        if path.exists():return job['id']+' cached'
+        if path.exists():
+            cached=json.loads(path.read_text())
+            if cached['input_sha256']!=job['input_sha256'] or cached['requested_model']!=provider.model:
+                raise ValueError('Cached input/model mismatch')
+            return job['id']+' cached'
         try:
             completion=asdict(provider.answer(job['question'],[Evidence(**e) for e in job['evidence']]))
             row={'status':'success','completion':completion}
@@ -90,10 +94,23 @@ def score():
         summary[backend]={}
         for arm in ['adjacency','hebbian_50']:
             group=[r for r in rows if r['arm']==arm]
-            summary[backend][arm]={'n':len(group),'success':sum(r['status']=='success' for r in group),'mean_answer_f1':float(np.mean([r['answer_f1'] for r in group])) if group else None,'f1_equals_one':sum(r['answer_f1']==1 for r in group),'complete_evidence':sum(r['complete_evidence'] for r in group),'required_citations':sum(r['required_citations'] for r in group),'invalid_citations':sum(bool(r['invalid_citations']) for r in group),'abstentions':sum(r['abstained'] for r in group)}
+            summary[backend][arm]={'n':len(group),'success':sum(r['status']=='success' for r in group),'mean_answer_f1':float(np.mean([r['answer_f1'] for r in group])) if group else None,'f1_equals_one':sum(r['answer_f1']==1 for r in group),'correct_with_required_citations':sum(r['answer_f1']==1 and r['complete_evidence'] and r['required_citations'] and not r['invalid_citations'] for r in group),'complete_evidence':sum(r['complete_evidence'] for r in group),'required_citations':sum(r['required_citations'] for r in group),'invalid_citations':sum(bool(r['invalid_citations']) for r in group),'abstentions':sum(r['abstained'] for r in group)}
     result={'protocol':json.loads(PROTOCOL.read_text()),'summary':summary,'per_call':{b:[json.loads(p.read_text()) for p in sorted((OUT/b).glob('*.json'))] for b in ['codex','claude']}}
     # Keep raw text completions local; publish identifiers and metrics only.
     public={'protocol':result['protocol'],'summary':summary,'per_call':{b:[{k:v for k,v in r.items() if k not in ('completion','raw_output','error')} for r in rs] for b,rs in result['per_call'].items()}}
+    audit_path=ROOT/'benchmarks/protocols/small-answer-audit-v1.json'
+    if audit_path.exists():
+        audit=json.loads(audit_path.read_text())
+        public['manual_audit']=audit['description']
+        for backend,rows in public['per_call'].items():
+            original={r['id']:r for r in result['per_call'][backend]}
+            for row in rows:
+                label=audit['labels'][backend][row['id']]
+                digest=hashlib.sha256(json.dumps(original[row['id']]['completion'],sort_keys=True).encode()).hexdigest()
+                if digest!=label['completion_sha256']:raise ValueError('Manual audit belongs to different completions')
+                row.update(label)
+            for arm in ['adjacency','hebbian_50']:
+                public['summary'][backend][arm]['manual_correct']=sum(r['manual_answer_correct'] for r in rows if r['arm']==arm)
     (ROOT/'benchmarks/protocols/small-answer-results-v1.json').write_text(json.dumps(public,indent=2)+'\n')
     print(json.dumps(summary,indent=2))
 
