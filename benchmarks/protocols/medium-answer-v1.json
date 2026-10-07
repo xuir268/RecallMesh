@@ -1,0 +1,44 @@
+{
+  "seed": 20261009,
+  "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "case_ids": [
+    "conv-49:q50",
+    "conv-44:q14",
+    "conv-47:q56",
+    "conv-43:q4",
+    "conv-44:q42",
+    "conv-42:q26",
+    "conv-42:q8",
+    "conv-47:q57",
+    "conv-44:q7",
+    "conv-43:q56",
+    "conv-50:q21",
+    "conv-43:q34",
+    "conv-43:q19",
+    "conv-47:q19",
+    "conv-47:q0",
+    "conv-49:q142",
+    "conv-44:q69",
+    "conv-47:q111",
+    "conv-47:q101",
+    "conv-48:q150"
+  ],
+  "arms": [
+    "adjacency",
+    "hebbian_50",
+    "oracle"
+  ],
+  "models": {
+    "codex": "gpt-6-astra",
+    "claude": "claude-sonnet-4-6"
+  },
+  "calls": 120,
+  "budget": 16,
+  "effort": "medium",
+  "selection": "five seeded random questions per category 1/2/3/4 from fixed 100-question cohort, six small-pilot questions excluded; not selected for retrieval outcomes",
+  "oracle": "all original required sources first, fill to16 with Hebbian distractors then chronological records; no gold answer text in prompt",
+  "scoring": "primary upstream-style token F1, paired differences, 3000 conversation-cluster bootstrap draws. Secondary exact F1=1, complete source coverage, required citations, invalid IDs, abstentions. Any manual audit is secondary and disclosed separately.",
+  "decision": "Diagnostic pilot only, no tuning or reversal of longitudinal stopping rule. Positive answer-quality signal requires Hebbian minus adjacency mean F1 >= .05 and paired cluster95 lower bound >0 for both models. Otherwise improvement remains unestablished.",
+  "policy": "first attempts including failures, no retries, no tools, fresh sessions; locked settings match longitudinal-v1; holdout questions/answers do not train graph",
+  "scope": "medium pilot, previously exposed narrow speaker-reference cohort; stratified scores are not population prevalence weighted; one completion per condition/model; token count not matched; oracle can still contain ambiguous or insufficient annotations"
+}

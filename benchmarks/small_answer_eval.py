@@ -17,10 +17,12 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT/'benchmarks/results/small-answer'
 PROTOCOL = ROOT/'benchmarks/protocols/small-answer-v1.json'
 
-def prepare():
+def prepare(chosen=None, protocol=None, oracle=False):
     membership = json.loads((ROOT/'benchmarks/protocols/natural-reference-qa-v1.json').read_text())['membership']
-    chosen = random.Random(20261007).sample(sorted(membership, key=lambda c:c['id']), 6)
-    protocol = {'seed':20261007,'case_ids':[c['id'] for c in chosen], 'arms':['adjacency','hebbian_50'], 'models':{'codex':'gpt-6-astra','claude':'claude-sonnet-4-6'}, 'calls':24,'budget':16,'effort':'medium', 'selection':'random six from fixed 100-question cohort; no gain/loss selection', 'scoring':'upstream-style token F1 primary; exact F1=1 and required-source citation coverage secondary. Citation coverage is a provenance proxy, not semantic entailment.', 'policy':'first attempts, no retries, no tools, fresh sessions, fixed prompt, gold labels withheld; same retrieval settings and replay as longitudinal-v1', 'scope':'small previously exposed cohort; no superiority or statistical-significance claim'}
+    if chosen is None:
+        chosen = random.Random(20261007).sample(sorted(membership, key=lambda c:c['id']), 6)
+    if protocol is None:
+        protocol = {'seed':20261007,'case_ids':[c['id'] for c in chosen], 'arms':['adjacency','hebbian_50'], 'models':{'codex':'gpt-6-astra','claude':'claude-sonnet-4-6'}, 'calls':24,'budget':16,'effort':'medium', 'selection':'random six from fixed 100-question cohort; no gain/loss selection', 'scoring':'upstream-style token F1 primary; exact F1=1 and required-source citation coverage secondary. Citation coverage is a provenance proxy, not semantic entailment.', 'policy':'first attempts, no retries, no tools, fresh sessions, fixed prompt, gold labels withheld; same retrieval settings and replay as longitudinal-v1', 'scope':'small previously exposed cohort; no superiority or statistical-significance claim'}
     if PROTOCOL.exists() and json.loads(PROTOCOL.read_text()) != protocol:
         raise ValueError('Locked protocol changed')
     PROTOCOL.write_text(json.dumps(protocol,indent=2)+'\n')
@@ -61,8 +63,23 @@ def prepare():
                 evidence=[records[int(i)] for i in r.search(qa['question'],t,16,.4)]
                 job={'id':c['id']+'-'+arm,'case':c['id'],'arm':arm,'question':qa['question'],'gold':str(qa['answer']),'category':qa['category'],'required':c['gold'],'evidence':evidence}
                 job['input_sha256']=hashlib.sha256(json.dumps({'question':job['question'],'evidence':evidence},sort_keys=True).encode()).hexdigest();jobs.append(job)
+            if oracle:
+                evidence=oracle_packet(c['gold'], records, evidence)
+                job={'id':c['id']+'-oracle','case':c['id'],'arm':'oracle','question':qa['question'],'gold':str(qa['answer']),'category':qa['category'],'required':c['gold'],'evidence':evidence}
+                job['input_sha256']=hashlib.sha256(json.dumps({'question':job['question'],'evidence':evidence},sort_keys=True).encode()).hexdigest();jobs.append(job)
         print('prepared',sample['sample_id'],flush=True)
     (OUT/'jobs.json').write_text(json.dumps(jobs,indent=2))
+
+def oracle_packet(required, records, distractors, budget=16):
+    by_id={r['id']:r for r in records.values()}
+    if len(required)>budget:raise ValueError('Oracle exceeds evidence budget')
+    packet=[by_id[k] for k in dict.fromkeys(required)]
+    present={r['id'] for r in packet}
+    for record in distractors+list(records.values()):
+        if len(packet)>=budget:break
+        if record['id'] not in present:
+            packet.append(record);present.add(record['id'])
+    return packet
 
 def run(backend):
     protocol=json.loads(PROTOCOL.read_text());provider=CliProvider(backend,protocol['models'][backend],timeout=120,max_budget_usd=.25)
@@ -92,13 +109,13 @@ def score():
     for backend in ['codex','claude']:
         rows=[json.loads(p.read_text()) for p in sorted((OUT/backend).glob('*.json'))]
         summary[backend]={}
-        for arm in ['adjacency','hebbian_50']:
+        for arm in json.loads(PROTOCOL.read_text())['arms']:
             group=[r for r in rows if r['arm']==arm]
             summary[backend][arm]={'n':len(group),'success':sum(r['status']=='success' for r in group),'mean_answer_f1':float(np.mean([r['answer_f1'] for r in group])) if group else None,'f1_equals_one':sum(r['answer_f1']==1 for r in group),'correct_with_required_citations':sum(r['answer_f1']==1 and r['complete_evidence'] and r['required_citations'] and not r['invalid_citations'] for r in group),'complete_evidence':sum(r['complete_evidence'] for r in group),'required_citations':sum(r['required_citations'] for r in group),'invalid_citations':sum(bool(r['invalid_citations']) for r in group),'abstentions':sum(r['abstained'] for r in group)}
     result={'protocol':json.loads(PROTOCOL.read_text()),'summary':summary,'per_call':{b:[json.loads(p.read_text()) for p in sorted((OUT/b).glob('*.json'))] for b in ['codex','claude']}}
     # Keep raw text completions local; publish identifiers and metrics only.
     public={'protocol':result['protocol'],'summary':summary,'per_call':{b:[{k:v for k,v in r.items() if k not in ('completion','raw_output','error')} for r in rs] for b,rs in result['per_call'].items()}}
-    audit_path=ROOT/'benchmarks/protocols/small-answer-audit-v1.json'
+    audit_path=PROTOCOL.with_name(PROTOCOL.name.replace('-v1.json','-audit-v1.json'))
     if audit_path.exists():
         audit=json.loads(audit_path.read_text())
         public['manual_audit']=audit['description']
@@ -109,9 +126,9 @@ def score():
                 digest=hashlib.sha256(json.dumps(original[row['id']]['completion'],sort_keys=True).encode()).hexdigest()
                 if digest!=label['completion_sha256']:raise ValueError('Manual audit belongs to different completions')
                 row.update(label)
-            for arm in ['adjacency','hebbian_50']:
+            for arm in json.loads(PROTOCOL.read_text())['arms']:
                 public['summary'][backend][arm]['manual_correct']=sum(r['manual_answer_correct'] for r in rows if r['arm']==arm)
-    (ROOT/'benchmarks/protocols/small-answer-results-v1.json').write_text(json.dumps(public,indent=2)+'\n')
+    PROTOCOL.with_name(PROTOCOL.name.replace('-v1.json','-results-v1.json')).write_text(json.dumps(public,indent=2)+'\n')
     print(json.dumps(summary,indent=2))
 
 if __name__=='__main__':
