@@ -1,0 +1,815 @@
+{
+  "protocol": {
+    "registered_date": "2026-10-07",
+    "membership": "benchmarks/protocols/natural-reference-qa-v1.json",
+    "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "checkpoints": [
+      0,
+      1,
+      5,
+      10,
+      25,
+      50
+    ],
+    "metric": "mean original gold evidence recall@16 over the fixed 100 questions",
+    "settings": {
+      "lambda": 0.05,
+      "eta": 1,
+      "floor": 0.001,
+      "hops": 2,
+      "seed_count": 8,
+      "graph_weight": 0.4
+    },
+    "initialization": "Same chronological star graph as original QA study; adjacency is within-original-session previous-turn edges. Identical fixed index and metadata.",
+    "usage_session": "One chronological sweep of every original conversation utterance as a retrieval query against the complete fixed corpus. Increment tick once per sweep. Retrieve top16 with session-start snapshot, reinforce every unordered pair in each returned set at the new tick, publish once at session end. Exact source records remain eligible.",
+    "leakage_policy": "Training uses original utterances only; no benchmark questions, answers, gold evidence or membership annotations enter reinforcement. Evaluation searches never reinforce.",
+    "control": "Adjacency-only snapshot and query tick are frozen at original ingestion tick; BM25 also frozen. Their packets must be identical at every checkpoint.",
+    "capacity": "Power of two sized to hold the complete possible undirected graph below 70% occupancy; reject any run with dropped inserts.",
+    "decision": "Promote Hebbian learning only if session50 minus session1 is at least 0.01 absolute recall, session50 minus adjacency is at least 0.01, paired conversation-cluster bootstrap 95% lower bound for the latter is positive, and session50 is no worse than session25. Otherwise retain adjacency as product recommendation and Hebbian learning as experimental. No tuning or alternate cohorts after this run.",
+    "uncertainty": "3000 paired conversation-cluster bootstrap draws, seed20261007; seven clusters provide limited precision.",
+    "scope": "Repeated-utterance simulated use on a previously evaluated narrow speaker-coreference cohort, not real agent usage or generated-answer quality. Failure does not disprove every possible co-activation policy. No model calls."
+  },
+  "cases": 100,
+  "curve": [
+    {
+      "session": 0,
+      "graph": 0.5830912698412698,
+      "adjacency": 0.5788968253968254,
+      "lexical": 0.5208015873015873,
+      "graph_minus_adjacency_ci95": [
+        -0.016515151515151514,
+        0.026575464396284856
+      ]
+    },
+    {
+      "session": 1,
+      "graph": 0.5845912698412699,
+      "adjacency": 0.5788968253968254,
+      "lexical": 0.5208015873015873,
+      "graph_minus_adjacency_ci95": [
+        -0.04989711934156379,
+        0.049779977997799776
+      ]
+    },
+    {
+      "session": 5,
+      "graph": 0.5605912698412698,
+      "adjacency": 0.5788968253968254,
+      "lexical": 0.5208015873015873,
+      "graph_minus_adjacency_ci95": [
+        -0.08831699346405228,
+        0.03579664570230608
+      ]
+    },
+    {
+      "session": 10,
+      "graph": 0.5505912698412698,
+      "adjacency": 0.5788968253968254,
+      "lexical": 0.5208015873015873,
+      "graph_minus_adjacency_ci95": [
+        -0.09662646904574604,
+        0.03215020576131687
+      ]
+    },
+    {
+      "session": 25,
+      "graph": 0.5505912698412698,
+      "adjacency": 0.5788968253968254,
+      "lexical": 0.5208015873015873,
+      "graph_minus_adjacency_ci95": [
+        -0.09228395061728395,
+        0.022772772772772773
+      ]
+    },
+    {
+      "session": 50,
+      "graph": 0.5339246031746032,
+      "adjacency": 0.5788968253968254,
+      "lexical": 0.5208015873015873,
+      "graph_minus_adjacency_ci95": [
+        -0.12285223367697595,
+        0.011507936507936505
+      ]
+    }
+  ],
+  "session50_minus1": -0.05066666666666664,
+  "session50_minus_adjacency": -0.04497222222222219,
+  "promote_hebbian": false,
+  "elapsed_seconds": 76.8328099999926,
+  "diagnostics": [
+    {
+      "conversation": "conv-42",
+      "session": 0,
+      "tick": 29,
+      "nodes": 629,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 2369,
+        "inserts": 2369,
+        "updates": 0,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.0045185089111328125,
+        "mean_probe": 0.002532714225411566
+      }
+    },
+    {
+      "conversation": "conv-42",
+      "session": 1,
+      "tick": 30,
+      "nodes": 629,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 41232,
+        "inserts": 41232,
+        "updates": 36617,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.078643798828125,
+        "mean_probe": 0.031907924315020104
+      }
+    },
+    {
+      "conversation": "conv-42",
+      "session": 5,
+      "tick": 34,
+      "nodes": 629,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 48294,
+        "inserts": 48294,
+        "updates": 331475,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.09211349487304688,
+        "mean_probe": 0.03305167088414273
+      }
+    },
+    {
+      "conversation": "conv-42",
+      "session": 10,
+      "tick": 39,
+      "nodes": 629,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 49093,
+        "inserts": 49093,
+        "updates": 708076,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.09363746643066406,
+        "mean_probe": 0.03321715495483835
+      }
+    },
+    {
+      "conversation": "conv-42",
+      "session": 25,
+      "tick": 54,
+      "nodes": 629,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 49644,
+        "inserts": 49644,
+        "updates": 1839725,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.09468841552734375,
+        "mean_probe": 0.03341909388795942
+      }
+    },
+    {
+      "conversation": "conv-42",
+      "session": 50,
+      "tick": 79,
+      "nodes": 629,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 50120,
+        "inserts": 50120,
+        "updates": 3726249,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.0955963134765625,
+        "mean_probe": 0.033612975850612056
+      }
+    },
+    {
+      "conversation": "conv-43",
+      "session": 0,
+      "tick": 29,
+      "nodes": 680,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 2462,
+        "inserts": 2462,
+        "updates": 0,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.004695892333984375,
+        "mean_probe": 0.002437043054427295
+      }
+    },
+    {
+      "conversation": "conv-43",
+      "session": 1,
+      "tick": 30,
+      "nodes": 680,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 44485,
+        "inserts": 44485,
+        "updates": 39577,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.08484840393066406,
+        "mean_probe": 0.0361875758368823
+      }
+    },
+    {
+      "conversation": "conv-43",
+      "session": 5,
+      "tick": 34,
+      "nodes": 680,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 51814,
+        "inserts": 51814,
+        "updates": 358648,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.09882736206054688,
+        "mean_probe": 0.03861989660431416
+      }
+    },
+    {
+      "conversation": "conv-43",
+      "session": 10,
+      "tick": 39,
+      "nodes": 680,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 52630,
+        "inserts": 52630,
+        "updates": 765832,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10038375854492188,
+        "mean_probe": 0.03911849297829343
+      }
+    },
+    {
+      "conversation": "conv-43",
+      "session": 25,
+      "tick": 54,
+      "nodes": 680,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 53395,
+        "inserts": 53395,
+        "updates": 1989067,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10184288024902344,
+        "mean_probe": 0.03952191032195458
+      }
+    },
+    {
+      "conversation": "conv-43",
+      "session": 50,
+      "tick": 79,
+      "nodes": 680,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 54169,
+        "inserts": 54169,
+        "updates": 4028293,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10331916809082031,
+        "mean_probe": 0.03969491938932928
+      }
+    },
+    {
+      "conversation": "conv-44",
+      "session": 0,
+      "tick": 28,
+      "nodes": 675,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 2502,
+        "inserts": 2502,
+        "updates": 0,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.004772186279296875,
+        "mean_probe": 0.002797761790567546
+      }
+    },
+    {
+      "conversation": "conv-44",
+      "session": 1,
+      "tick": 29,
+      "nodes": 675,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 45031,
+        "inserts": 45031,
+        "updates": 38471,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.08588981628417969,
+        "mean_probe": 0.03581950132930948
+      }
+    },
+    {
+      "conversation": "conv-44",
+      "session": 5,
+      "tick": 33,
+      "nodes": 675,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 52619,
+        "inserts": 52619,
+        "updates": 354883,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10036277770996094,
+        "mean_probe": 0.037712698342584824
+      }
+    },
+    {
+      "conversation": "conv-44",
+      "session": 10,
+      "tick": 38,
+      "nodes": 675,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 53535,
+        "inserts": 53535,
+        "updates": 758967,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10210990905761719,
+        "mean_probe": 0.038255905831616414
+      }
+    },
+    {
+      "conversation": "conv-44",
+      "session": 25,
+      "tick": 53,
+      "nodes": 675,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 54366,
+        "inserts": 54366,
+        "updates": 1973136,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10369491577148438,
+        "mean_probe": 0.03912844475615807
+      }
+    },
+    {
+      "conversation": "conv-44",
+      "session": 50,
+      "tick": 78,
+      "nodes": 675,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 54912,
+        "inserts": 54912,
+        "updates": 3997590,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.104736328125,
+        "mean_probe": 0.03995087479290572
+      }
+    },
+    {
+      "conversation": "conv-47",
+      "session": 0,
+      "tick": 31,
+      "nodes": 689,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 2526,
+        "inserts": 2526,
+        "updates": 0,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.004817962646484375,
+        "mean_probe": 0.000395882818685669
+      }
+    },
+    {
+      "conversation": "conv-47",
+      "session": 1,
+      "tick": 32,
+      "nodes": 689,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 46012,
+        "inserts": 46012,
+        "updates": 39194,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.08776092529296875,
+        "mean_probe": 0.03747388681548248
+      }
+    },
+    {
+      "conversation": "conv-47",
+      "session": 5,
+      "tick": 36,
+      "nodes": 689,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 54168,
+        "inserts": 54168,
+        "updates": 361758,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.1033172607421875,
+        "mean_probe": 0.04194015281564509
+      }
+    },
+    {
+      "conversation": "conv-47",
+      "session": 10,
+      "tick": 41,
+      "nodes": 689,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 55052,
+        "inserts": 55052,
+        "updates": 774274,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10500335693359375,
+        "mean_probe": 0.04296983333453913
+      }
+    },
+    {
+      "conversation": "conv-47",
+      "session": 25,
+      "tick": 56,
+      "nodes": 689,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 55901,
+        "inserts": 55901,
+        "updates": 2013625,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10662269592285156,
+        "mean_probe": 0.044335756110336376
+      }
+    },
+    {
+      "conversation": "conv-47",
+      "session": 50,
+      "tick": 81,
+      "nodes": 689,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 56484,
+        "inserts": 56484,
+        "updates": 4080042,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10773468017578125,
+        "mean_probe": 0.04531749588906246
+      }
+    },
+    {
+      "conversation": "conv-48",
+      "session": 0,
+      "tick": 30,
+      "nodes": 681,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 2546,
+        "inserts": 2546,
+        "updates": 0,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.004856109619140625,
+        "mean_probe": 0.003927729772191673
+      }
+    },
+    {
+      "conversation": "conv-48",
+      "session": 1,
+      "tick": 31,
+      "nodes": 681,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 45904,
+        "inserts": 45904,
+        "updates": 38362,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.087554931640625,
+        "mean_probe": 0.036005031685377255
+      }
+    },
+    {
+      "conversation": "conv-48",
+      "session": 5,
+      "tick": 35,
+      "nodes": 681,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 53930,
+        "inserts": 53930,
+        "updates": 357216,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10286331176757812,
+        "mean_probe": 0.03869428378240333
+      }
+    },
+    {
+      "conversation": "conv-48",
+      "session": 10,
+      "tick": 40,
+      "nodes": 681,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 54827,
+        "inserts": 54827,
+        "updates": 764919,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10457420349121094,
+        "mean_probe": 0.03965252651431053
+      }
+    },
+    {
+      "conversation": "conv-48",
+      "session": 25,
+      "tick": 55,
+      "nodes": 681,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 55691,
+        "inserts": 55691,
+        "updates": 1989855,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10622215270996094,
+        "mean_probe": 0.04061947274712962
+      }
+    },
+    {
+      "conversation": "conv-48",
+      "session": 50,
+      "tick": 80,
+      "nodes": 681,
+      "stats": {
+        "capacity": 524288,
+        "live_edges": 56039,
+        "inserts": 56039,
+        "updates": 4032507,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.10688591003417969,
+        "mean_probe": 0.04129389763500276
+      }
+    },
+    {
+      "conversation": "conv-49",
+      "session": 0,
+      "tick": 25,
+      "nodes": 509,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 1890,
+        "inserts": 1890,
+        "updates": 0,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.00720977783203125,
+        "mean_probe": 0.0021164021164021165
+      }
+    },
+    {
+      "conversation": "conv-49",
+      "session": 1,
+      "tick": 26,
+      "nodes": 509,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 31922,
+        "inserts": 31922,
+        "updates": 31048,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.12177276611328125,
+        "mean_probe": 0.053152294743528665
+      }
+    },
+    {
+      "conversation": "conv-49",
+      "session": 5,
+      "tick": 30,
+      "nodes": 509,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 36613,
+        "inserts": 36613,
+        "updates": 270677,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.13966751098632812,
+        "mean_probe": 0.05595040515473982
+      }
+    },
+    {
+      "conversation": "conv-49",
+      "session": 10,
+      "tick": 35,
+      "nodes": 509,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 37074,
+        "inserts": 37074,
+        "updates": 575616,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.14142608642578125,
+        "mean_probe": 0.05694723269516395
+      }
+    },
+    {
+      "conversation": "conv-49",
+      "session": 25,
+      "tick": 50,
+      "nodes": 509,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 37529,
+        "inserts": 37529,
+        "updates": 1491361,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.14316177368164062,
+        "mean_probe": 0.05825729777812661
+      }
+    },
+    {
+      "conversation": "conv-49",
+      "session": 50,
+      "tick": 75,
+      "nodes": 509,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 37960,
+        "inserts": 37960,
+        "updates": 3017930,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.144805908203125,
+        "mean_probe": 0.05914447182326589
+      }
+    },
+    {
+      "conversation": "conv-50",
+      "session": 0,
+      "tick": 30,
+      "nodes": 568,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 2045,
+        "inserts": 2045,
+        "updates": 0,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.007801055908203125,
+        "mean_probe": 0.003911980440097799
+      }
+    },
+    {
+      "conversation": "conv-50",
+      "session": 1,
+      "tick": 31,
+      "nodes": 568,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 36046,
+        "inserts": 36046,
+        "updates": 34159,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.13750457763671875,
+        "mean_probe": 0.06019514279609715
+      }
+    },
+    {
+      "conversation": "conv-50",
+      "session": 5,
+      "tick": 35,
+      "nodes": 568,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 41700,
+        "inserts": 41700,
+        "updates": 301145,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.1590728759765625,
+        "mean_probe": 0.06489229826889702
+      }
+    },
+    {
+      "conversation": "conv-50",
+      "session": 10,
+      "tick": 40,
+      "nodes": 568,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 42247,
+        "inserts": 42247,
+        "updates": 641398,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.16115951538085938,
+        "mean_probe": 0.06627270001243335
+      }
+    },
+    {
+      "conversation": "conv-50",
+      "session": 25,
+      "tick": 55,
+      "nodes": 568,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 42918,
+        "inserts": 42918,
+        "updates": 1663127,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.16371917724609375,
+        "mean_probe": 0.06815119179154125
+      }
+    },
+    {
+      "conversation": "conv-50",
+      "session": 50,
+      "tick": 80,
+      "nodes": 568,
+      "stats": {
+        "capacity": 262144,
+        "live_edges": 43384,
+        "inserts": 43384,
+        "updates": 3366661,
+        "cas_retries": 0,
+        "rejected_full": 0,
+        "dropped_edges": 0,
+        "load_factor": 0.165496826171875,
+        "mean_probe": 0.06919498129790076
+      }
+    }
+  ]
+}
