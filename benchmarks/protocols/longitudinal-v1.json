@@ -1,0 +1,16 @@
+{
+  "registered_date": "2026-10-07",
+  "membership": "benchmarks/protocols/natural-reference-qa-v1.json",
+  "source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "checkpoints": [0, 1, 5, 10, 25, 50],
+  "metric": "mean original gold evidence recall@16 over the fixed 100 questions",
+  "settings": {"lambda": 0.05, "eta": 1, "floor": 0.001, "hops": 2, "seed_count": 8, "graph_weight": 0.4},
+  "initialization": "Same chronological star graph as original QA study; adjacency is within-original-session previous-turn edges. Identical fixed index and metadata.",
+  "usage_session": "One chronological sweep of every original conversation utterance as a retrieval query against the complete fixed corpus. Increment tick once per sweep. Retrieve top16 with session-start snapshot, reinforce every unordered pair in each returned set at the new tick, publish once at session end. Exact source records remain eligible.",
+  "leakage_policy": "Training uses original utterances only; no benchmark questions, answers, gold evidence or membership annotations enter reinforcement. Evaluation searches never reinforce.",
+  "control": "Adjacency-only snapshot and query tick are frozen at original ingestion tick; BM25 also frozen. Their packets must be identical at every checkpoint.",
+  "capacity": "Power of two sized to hold the complete possible undirected graph below 70% occupancy; reject any run with dropped inserts.",
+  "decision": "Promote Hebbian learning only if session50 minus session1 is at least 0.01 absolute recall, session50 minus adjacency is at least 0.01, paired conversation-cluster bootstrap 95% lower bound for the latter is positive, and session50 is no worse than session25. Otherwise retain adjacency as product recommendation and Hebbian learning as experimental. No tuning or alternate cohorts after this run.",
+  "uncertainty": "3000 paired conversation-cluster bootstrap draws, seed20261007; seven clusters provide limited precision.",
+  "scope": "Repeated-utterance simulated use on a previously evaluated narrow speaker-coreference cohort, not real agent usage or generated-answer quality. Failure does not disprove every possible co-activation policy. No model calls."
+}
