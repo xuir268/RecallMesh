@@ -33,7 +33,9 @@ This diagram is the proposed architecture. The current implementation uses a Pyt
 
 See [architecture status](docs/architecture.md), [test results and limitations](docs/evaluation.md), and [agent integration](docs/framework.md). The legacy `assoc_mem` imports and `assoc-memory` command remain compatible.
 
-## Latest evidence — October 7, 2026
+## Latest evidence — October 8, 2026
+
+- [Full existing-cohort Astra/Claude answer evaluation](docs/large-answer-evaluation.md): 100 questions, 600 recorded attempts (144 reused, 456 new). Mean answer-F1 was adjacency/Hebbian/oracle 42.88/39.41/54.96 for Astra and 44.57/41.02/57.39 for Claude. Hebbian improvement remains unestablished; paired signs, abstention transitions, seven-conversation uncertainty, and five Astra timeouts are reported. This is not a fresh sample.
 
 - [Medium Astra/Claude answer test](docs/medium-answer-evaluation.md): 20 questions, 120 first-attempt answers with adjacency, session-50 Hebbian, and oracle evidence. Hebbian mean answer-F1 was lower for both models; no reliable improvement was established. Oracle evidence improved mean F1, with scoring and source-annotation limits documented.
 

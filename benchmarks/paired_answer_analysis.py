@@ -24,10 +24,12 @@ def summarize(cases, candidate, reference='adjacency'):
     transitions = defaultdict(list)
     for case, arms in sorted(cases.items()):
         delta = arms[candidate]['answer_f1'] - arms[reference]['answer_f1']
-        state = ('abstain' if arms[reference]['abstained'] else 'answer') + '_to_' + ('abstain' if arms[candidate]['abstained'] else 'answer')
+        def state_of(row):
+            return 'error' if row.get('status','success') != 'success' else ('abstain' if row['abstained'] else 'answer')
+        state = state_of(arms[reference]) + '_to_' + state_of(arms[candidate])
         transitions[state].append(delta)
         groups[case.split(':')[0]].append(delta)
-        pairs.append({'case':case, 'conversation':case.split(':')[0], 'delta_f1':delta, 'reference_f1':arms[reference]['answer_f1'], 'candidate_f1':arms[candidate]['answer_f1'], 'reference_abstained':arms[reference]['abstained'], 'candidate_abstained':arms[candidate]['abstained']})
+        pairs.append({'case':case, 'conversation':case.split(':')[0], 'delta_f1':delta, 'reference_f1':arms[reference]['answer_f1'], 'candidate_f1':arms[candidate]['answer_f1'], 'reference_abstained':arms[reference]['abstained'], 'candidate_abstained':arms[candidate]['abstained'], 'reference_status':arms[reference].get('status','success'), 'candidate_status':arms[candidate].get('status','success')})
     deltas = np.array([p['delta_f1'] for p in pairs])
     wins = int(sum(deltas > TIE_TOLERANCE))
     losses = int(sum(deltas < -TIE_TOLERANCE))
@@ -35,7 +37,10 @@ def summarize(cases, candidate, reference='adjacency'):
     cw = sum(v > TIE_TOLERANCE for v in cluster_means.values())
     cl = sum(v < -TIE_TOLERANCE for v in cluster_means.values())
     states = {}
-    for state in ['abstain_to_answer','answer_to_abstain','answer_to_answer','abstain_to_abstain']:
+    states_to_report=['abstain_to_answer','answer_to_abstain','answer_to_answer','abstain_to_abstain']
+    if any('error' in k for k in transitions):
+        states_to_report += ['error_to_answer','error_to_abstain','answer_to_error','abstain_to_error','error_to_error']
+    for state in states_to_report:
         values = transitions[state]
         states[state] = {'n':len(values), 'wins':sum(v > TIE_TOLERANCE for v in values), 'ties':sum(abs(v) <= TIE_TOLERANCE for v in values), 'losses':sum(v < -TIE_TOLERANCE for v in values), 'mean_delta_f1':float(np.mean(values)) if values else None, 'contribution_to_overall_mean_delta':sum(values)/len(pairs)}
     return {'candidate':candidate,'reference':reference,'n':len(pairs),'wins':wins,'ties':len(pairs)-wins-losses,'losses':losses,'non_ties':wins+losses,'exact_sign_p_two_sided':sign_test(wins,losses),'delta_distribution':dict(zip(['minimum','q25','median','q75','maximum'],[float(v) for v in np.quantile(deltas,[0,.25,.5,.75,1])])), 'mean_delta_f1':float(np.mean(deltas)), 'abstention_transitions':states, 'conversation_mean_deltas':cluster_means, 'conversation_sign':{'n':len(groups),'wins':cw,'ties':len(groups)-cw-cl,'losses':cl,'exact_sign_p_two_sided':sign_test(cw,cl)}, 'per_question':pairs}
@@ -69,7 +74,7 @@ def main():
     path.write_text(json.dumps(result,indent=2)+'\n')
     dest = ROOT/'docs/assets/medium-answer-paired-deltas.csv'
     with dest.open('w',newline='') as f:
-        fields = ['backend','candidate','reference','case','conversation','reference_f1','candidate_f1','delta_f1','reference_abstained','candidate_abstained']
+        fields = ['backend','candidate','reference','case','conversation','reference_f1','candidate_f1','delta_f1','reference_abstained','candidate_abstained','reference_status','candidate_status']
         writer = csv.DictWriter(f,fieldnames=fields);writer.writeheader()
         for backend,arms in result['paired_distribution']['comparisons'].items():
             for candidate,stats in arms.items():

@@ -37,3 +37,14 @@ def test_refuses_unpaired_cohort(monkeypatch):
     result={'protocol':{'case_ids':['a:q1']},'per_call':{'codex':[{'case':'a:q1','arm':'adjacency','answer_f1':0,'abstained':True}]}}
     with pytest.raises(ValueError,match='Incomplete'):
         m.analyze(result)
+
+
+def test_call_errors_are_not_counted_as_answer_conversions(monkeypatch):
+    m=module(monkeypatch)
+    cases={'a:q1':{'adjacency':{'status':'error','answer_f1':0,'abstained':False},
+                   'oracle':{'status':'success','answer_f1':1,'abstained':False}}}
+    s=m.summarize(cases,'oracle')
+    assert s['abstention_transitions']['error_to_answer']['n']==1
+    assert s['abstention_transitions']['abstain_to_answer']['n']==0
+    assert s['abstention_transitions']['answer_to_answer']['n']==0
+    assert sum(t['contribution_to_overall_mean_delta'] for t in s['abstention_transitions'].values())==1

@@ -50,7 +50,10 @@ def prepare():
 def score():
     locked=json.loads((ROOT/'benchmarks/protocols/large-answer-inputs-v1.json').read_text())
     protocol=json.loads(runner.PROTOCOL.read_text())
+    cache=json.loads((ROOT/'benchmarks/protocols/large-answer-cache-v1.json').read_text())
     for backend in ['codex','claude']:
+        for key,entry in cache[backend].items():
+            assert hashlib.sha256((runner.OUT/backend/(key+'.json')).read_bytes()).hexdigest()==entry['sha256']
         rows=[json.loads(p.read_text()) for p in (runner.OUT/backend).glob('*.json')]
         assert len(rows)==len(locked)==300
         assert {r['id'] for r in rows}==set(locked)
@@ -68,7 +71,7 @@ def score():
         assert len(rows)==300 and len(cases)==100
         values=list(cases.values())
         mean=float(np.mean([r['hebbian_50']-r['adjacency'] for r in values]));ci=interval(values,'hebbian_50','adjacency')
-        paired[backend]={'hebbian_minus_adjacency_f1':mean,'cluster95':ci,'positive_signal':mean>=.05 and ci[0]>0,'oracle_minus_adjacency_f1':float(np.mean([r['oracle']-r['adjacency'] for r in values]))}
+        paired[backend]={'hebbian_minus_adjacency_f1':mean,'cluster95':ci,'positive_signal':mean>=.05 and ci[0]>0,'oracle_minus_adjacency_f1':float(np.mean([r['oracle']-r['adjacency'] for r in values])),'oracle_cluster95':interval(values,'oracle','adjacency')}
     jobs={j['id']:j for j in json.loads((runner.OUT/'jobs.json').read_text())}
     for backend,rows in result['per_call'].items():
         for row in rows:
@@ -87,6 +90,27 @@ def score():
     result['paired_distribution']=analyze(result)
     cache=json.loads((ROOT/'benchmarks/protocols/large-answer-cache-v1.json').read_text())
     result['cache_reuse']={b:len(v) for b,v in cache.items()}
+    from paired_answer_analysis import summarize
+    result['successful_pair_sensitivity']={}
+    for backend,rows in result['per_call'].items():
+        cases={}
+        for row in rows:cases.setdefault(row['case'],{})[row['arm']]=row
+        result['successful_pair_sensitivity'][backend]={arm:summarize({k:v for k,v in cases.items() if v['adjacency']['status']=='success' and v[arm]['status']=='success'},arm) for arm in ['hebbian_50','oracle']}
+    result['failures']={}
+    for backend in ['codex','claude']:
+        originals=[json.loads(p.read_text()) for p in (runner.OUT/backend).glob('*.json')]
+        result['failures'][backend]=[{'id':r['id'],'reason':'timeout120s' if 'exceeded 120 seconds' in r.get('error','') else 'other_call_error'} for r in originals if r['status']!='success']
+
+    recent=set(json.loads((ROOT/'benchmarks/protocols/medium-answer-v1.json').read_text())['case_ids']) | set(json.loads((ROOT/'benchmarks/protocols/small-answer-v1.json').read_text())['case_ids'])
+    remaining=set(protocol['case_ids'])-recent
+    subset={**result,'protocol':{**protocol,'case_ids':sorted(remaining)},'per_call':{b:[r for r in rows if r['case'] in remaining] for b,rows in result['per_call'].items()}}
+    result['outside_recent_pilots']={'n_questions':len(remaining),'prior_exposure':'outside only the two recent answer pilots; not a new corpus','paired_distribution':analyze(subset),'summary':{b:{arm:{'mean_answer_f1':float(np.mean([r['answer_f1'] for r in rows if r['case'] in remaining and r['arm']==arm])),'abstentions':sum(r['abstained'] for r in rows if r['case'] in remaining and r['arm']==arm)} for arm in protocol['arms']} for b,rows in result['per_call'].items()}}
+    for backend,stats in result['runtime'].items():
+        originals=[json.loads(p.read_text()) for p in (runner.OUT/backend).glob('*.json')]
+        new=[r for r in originals if r['id'] not in cache[backend]]
+        stats['new_calls']=len(new);stats['reused_calls']=len(cache[backend])
+        stats['new_reported_cost_usd']=sum(r['completion'].get('estimated_cost_usd') or 0 for r in new) if backend=='claude' else None
+
     RESULTS.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(paired,indent=2))
 
