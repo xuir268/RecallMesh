@@ -81,7 +81,7 @@ def oracle_packet(required, records, distractors, budget=16):
             packet.append(record);present.add(record['id'])
     return packet
 
-def run(backend):
+def run(backend, workers=2):
     protocol=json.loads(PROTOCOL.read_text());provider=CliProvider(backend,protocol['models'][backend],timeout=120,max_budget_usd=.25)
     folder=OUT/backend;folder.mkdir(exist_ok=True)
     jobs=json.loads((OUT/'jobs.json').read_text());random.Random(20261008).shuffle(jobs)
@@ -101,7 +101,7 @@ def run(backend):
         answer=row['completion']['answer'];cites=set(row['completion']['evidence_ids']);available={e['id'] for e in job['evidence']};required=set(job['required'])
         row.update(answer_f1=answer_f1(answer,job['gold'],job['category']),complete_evidence=required<=available,required_citations=required<=cites,invalid_citations=sorted(cites-available),abstained=answer.lower().strip()=='not enough information')
         path.write_text(json.dumps(row,indent=2));return job['id']+' '+row['status']
-    with ThreadPoolExecutor(max_workers=2) as pool:
+    with ThreadPoolExecutor(max_workers=workers) as pool:
         for f in as_completed([pool.submit(one,j) for j in jobs]):print(backend,f.result(),flush=True)
 
 def score():
