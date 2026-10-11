@@ -38,6 +38,11 @@ def score():
     protocol=json.loads(runner.PROTOCOL.read_text());summary={};public={}
     for backend in ['codex','claude']:
         rows=[json.loads(p.read_text()) for p in (runner.OUT/backend).glob('*.json')];assert len(rows)==20
+        locked=json.loads((ROOT/'benchmarks/protocols/entity-answer-inputs-v1.json').read_text())
+        assert {r['id'] for r in rows}==set(locked)
+        for row in rows:
+            assert row['input_sha256']==locked[row['id']]
+            assert row['requested_model']==protocol['models'][backend]
         paired=[];public[backend]=[]
         for row in sorted(rows,key=lambda r:r['id']):
             baseline=json.loads((ROOT/'benchmarks/results/medium-answer'/backend/(row['case']+'-adjacency.json')).read_text())

@@ -47,6 +47,8 @@ class EntityAwareRetriever:
             raise ValueError('Records must match dense node IDs in order')
         if speaker is not None and speaker not in self.names.values():
             raise ValueError('Unknown speaker entity')
+        if not isinstance(body,str):
+            raise ValueError('Record body must be a string')
         self.topic.add(body)
         if speaker is not None:
             self.roles[speaker]['authored_by'].add(node)

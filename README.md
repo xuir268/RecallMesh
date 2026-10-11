@@ -33,7 +33,9 @@ This diagram is the proposed architecture. The current implementation uses a Pyt
 
 See [architecture status](docs/architecture.md), [test results and limitations](docs/evaluation.md), and [agent integration](docs/framework.md). The legacy `assoc_mem` imports and `assoc-memory` command remain compatible.
 
-## Latest evidence — October 8, 2026
+## Latest evidence — October 11, 2026
+
+- [Experimental entity-aware routing](docs/entity-aware-retrieval.md): topic ranking plus adjacency reached 60.36% evidence recall versus 57.89% adjacency on the same100 questions. The40-answer follow-up is mixed (Astra F1+4.17 points, Claude−3.80; both intervals include zero). Experimental API and original-source provenance are available; defaults remain adjacency.
 
 - [Full existing-cohort Astra/Claude answer evaluation](docs/large-answer-evaluation.md): 100 questions, 600 recorded attempts (144 reused, 456 new). Mean answer-F1 was adjacency/Hebbian/oracle 42.88/39.41/54.96 for Astra and 44.57/41.02/57.39 for Claude. Hebbian improvement remains unestablished; paired signs, abstention transitions, seven-conversation uncertainty, and five Astra timeouts are reported. This is not a fresh sample.
 
