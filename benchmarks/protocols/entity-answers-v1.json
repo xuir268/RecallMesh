@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-11",
+  "case_ids": [
+    "conv-49:q50",
+    "conv-44:q14",
+    "conv-47:q56",
+    "conv-43:q4",
+    "conv-44:q42",
+    "conv-42:q26",
+    "conv-42:q8",
+    "conv-47:q57",
+    "conv-44:q7",
+    "conv-43:q56",
+    "conv-50:q21",
+    "conv-43:q34",
+    "conv-43:q19",
+    "conv-47:q19",
+    "conv-47:q0",
+    "conv-49:q142",
+    "conv-44:q69",
+    "conv-47:q111",
+    "conv-47:q101",
+    "conv-48:q150"
+  ],
+  "arms": [
+    "entity"
+  ],
+  "models": {
+    "codex": "gpt-6-astra",
+    "claude": "claude-sonnet-4-6"
+  },
+  "calls": 40,
+  "workers": 4,
+  "policy": "new first-attempt entity answers on the same20 medium-pilot questions; cached original adjacency comparator, no retries/tools/fallback or outcome selection. Gold and arm names withheld from models.",
+  "metric": "unchanged answer token F1, paired deltas and cluster95; abstentions. Diagnostic only, no product promotion.",
+  "limits": "cached comparator generated earlier at two workers vs four now; execution date/model nondeterminism confound. All20 questions are previously exposed and are included in the new100-question retrieval evaluation; not a heldout answer test."
+}

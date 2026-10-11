@@ -1,0 +1,2656 @@
+{
+  "protocol": {
+    "registered_date": "2026-10-11",
+    "cohort": "all100 existing natural-reference-qa-v1 questions; previously exposed, no fresh holdout claim",
+    "method": "Typed entity-to-record posting links for authored-by speaker annotations and explicit named mentions; declared aliases only. First-person identity uses supplied speaker provenance; no automatic he/she resolution. Entity names come from conversation speakers, not questions or answers.",
+    "query": "Recognize known entity names/declared aliases; gate candidates to their authored/mentioned records, remove recognized names from topic query, score original bodies using BM25, add existing adjacency activation gated to the same entity candidates. Query with no entity or multiple distinct entities falls back to original adjacency exactly.",
+    "settings": {
+      "budget": 16,
+      "hops": 2,
+      "seed_count": 8,
+      "graph_weight": 0.4
+    },
+    "controls": [
+      "BM25",
+      "original frozen adjacency",
+      "entity_topic_only",
+      "entity_topic_plus_adjacency"
+    ],
+    "metric": "mean original gold evidence recall@16; complete evidence; paired per-question deltas; seven-conversation bootstrap3000",
+    "decision": "Experimental only. Positive retrieval signal requires >=.02 absolute recall gain over adjacency and paired cluster95 lower bound >0. No tuning after outcomes. Answer-quality improvement remains unverified without separate model calls.",
+    "limits": "Metadata-assisted deterministic entity routing and query rewriting, not learned semantic coreference or Hebbian learning. Authorship does not imply every statement is about its author. Existing product settings unchanged. No model calls in this stage."
+  },
+  "n": 100,
+  "summary": {
+    "bm25": {
+      "evidence_recall": 0.5208015873015873,
+      "any_evidence": 0.66,
+      "all_evidence": 0.42
+    },
+    "adjacency": {
+      "evidence_recall": 0.5788968253968254,
+      "any_evidence": 0.71,
+      "all_evidence": 0.48
+    },
+    "entity_topic_only": {
+      "evidence_recall": 0.5277182539682539,
+      "any_evidence": 0.68,
+      "all_evidence": 0.42
+    },
+    "entity_topic_plus_adjacency": {
+      "evidence_recall": 0.603563492063492,
+      "any_evidence": 0.76,
+      "all_evidence": 0.49
+    }
+  },
+  "entity_minus_adjacency": 0.024666666666666615,
+  "cluster95": [
+    0.009469696969696968,
+    0.04179172320217097
+  ],
+  "positive_signal": true,
+  "per_question": [
+    {
+      "id": "conv-42:q166",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-42:q78",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.7777777777777778,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.7777777777777778,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.7777777777777778,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.7777777777777778,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q170",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-42:q66",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q8",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q91",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-42:q163",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-42:q43",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q16",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q178",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-42:q63",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q151",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q26",
+      "conversation": "conv-42",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q23",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q72",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q94",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q50",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q147",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q119",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q70",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q34",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q26",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q55",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q40",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q4",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.2857142857142857,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.42857142857142855,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.2857142857142857,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.42857142857142855,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q161",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q104",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q56",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q140",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q35",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q19",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q81",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q133",
+      "conversation": "conv-43",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-44:q17",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q3",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q69",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-44:q67",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-44:q42",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q29",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q54",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q74",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-44:q35",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q7",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q73",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-44:q71",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-44:q14",
+      "conversation": "conv-44",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q56",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q93",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q19",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q111",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q73",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q104",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q26",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q101",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q24",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q89",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q75",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q0",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q44",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q120",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q4",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q57",
+      "conversation": "conv-47",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q121",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q144",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q42",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q50",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q109",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q136",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q156",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q127",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q130",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q17",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q91",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q13",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q18",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q150",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q190",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q142",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q159",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q82",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q61",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q53",
+      "conversation": "conv-48",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q2",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q84",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q7",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.1,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q155",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q50",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.125,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q115",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q142",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q0",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.4,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q44",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.6,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.6,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q140",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q26",
+      "conversation": "conv-49",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-50:q104",
+      "conversation": "conv-50",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-50:q105",
+      "conversation": "conv-50",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-50:q24",
+      "conversation": "conv-50",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-50:q66",
+      "conversation": "conv-50",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-50:q21",
+      "conversation": "conv-50",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-50:q92",
+      "conversation": "conv-50",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-50:q96",
+      "conversation": "conv-50",
+      "metrics": {
+        "bm25": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_only": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "entity_topic_plus_adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    }
+  ],
+  "wins": 7,
+  "losses": 1
+}
