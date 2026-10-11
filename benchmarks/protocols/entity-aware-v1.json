@@ -1,0 +1,11 @@
+{
+  "registered_date": "2026-10-11",
+  "cohort": "all100 existing natural-reference-qa-v1 questions; previously exposed, no fresh holdout claim",
+  "method": "Typed entity-to-record posting links for authored-by speaker annotations and explicit named mentions; declared aliases only. First-person identity uses supplied speaker provenance; no automatic he/she resolution. Entity names come from conversation speakers, not questions or answers.",
+  "query": "Recognize known entity names/declared aliases; gate candidates to their authored/mentioned records, remove recognized names from topic query, score original bodies using BM25, add existing adjacency activation gated to the same entity candidates. Query with no entity or multiple distinct entities falls back to original adjacency exactly.",
+  "settings": {"budget":16,"hops":2,"seed_count":8,"graph_weight":0.4},
+  "controls": ["BM25", "original frozen adjacency", "entity_topic_only", "entity_topic_plus_adjacency"],
+  "metric": "mean original gold evidence recall@16; complete evidence; paired per-question deltas; seven-conversation bootstrap3000",
+  "decision": "Experimental only. Positive retrieval signal requires >=.02 absolute recall gain over adjacency and paired cluster95 lower bound >0. No tuning after outcomes. Answer-quality improvement remains unverified without separate model calls.",
+  "limits": "Metadata-assisted deterministic entity routing and query rewriting, not learned semantic coreference or Hebbian learning. Authorship does not imply every statement is about its author. Existing product settings unchanged. No model calls in this stage."
+}
