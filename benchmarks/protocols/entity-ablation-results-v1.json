@@ -1,0 +1,5592 @@
+{
+  "design": "Post-hoc fixed diagnostics; existing 100 exposed cases, same seven conversations. Fallback includes all resolvable category 1\u20134 questions outside cohort with zero/multiple recognized speaker names. Exact packet equality is a delegation check, not active-route generalization. Original graph seeds held fixed in body-index factorial. Gating includes candidate-local normalization. No model calls.",
+  "n": 100,
+  "summary": {
+    "adjacency": {
+      "evidence_recall": 0.5788968253968254,
+      "all_evidence": 0.48
+    },
+    "adjacency_stripped_query": {
+      "evidence_recall": 0.5738968253968254,
+      "all_evidence": 0.48
+    },
+    "strip_lexical_keep_original_seeds": {
+      "evidence_recall": 0.5738968253968254,
+      "all_evidence": 0.48
+    },
+    "body_original_ungated": {
+      "evidence_recall": 0.5515357142857142,
+      "all_evidence": 0.46
+    },
+    "body_original_gated": {
+      "evidence_recall": 0.5696190476190476,
+      "all_evidence": 0.47
+    },
+    "body_stripped_ungated": {
+      "evidence_recall": 0.5750357142857142,
+      "all_evidence": 0.48
+    },
+    "body_stripped_gated": {
+      "evidence_recall": 0.603563492063492,
+      "all_evidence": 0.49
+    }
+  },
+  "contrasts": {
+    "adjacency_stripped_query minus adjacency": {
+      "delta": -0.0050000000000000044,
+      "cluster95": [
+        -0.014150943396226415,
+        0.0
+      ]
+    },
+    "body_stripped_gated minus body_stripped_ungated": {
+      "delta": 0.02852777777777782,
+      "cluster95": [
+        0.016666666666666666,
+        0.04288194444444444
+      ]
+    },
+    "body_stripped_ungated minus body_original_ungated": {
+      "delta": 0.023499999999999965,
+      "cluster95": [
+        0.003260869565217392,
+        0.04405961570733345
+      ]
+    }
+  },
+  "fallback": {
+    "multiple_names": {
+      "n": 122,
+      "recall": 0.5131424104664221,
+      "identical_packets": 122
+    },
+    "zero_names": {
+      "n": 7,
+      "recall": 0.8571428571428571,
+      "identical_packets": 7
+    }
+  },
+  "per_question": [
+    {
+      "id": "conv-42:q8",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q16",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q26",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q43",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q63",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q66",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q78",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.7777777777777778,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.7777777777777778,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.7777777777777778,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.7777777777777778,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q91",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-42:q151",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-42:q163",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-42:q166",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-42:q170",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-42:q178",
+      "conversation": "conv-42",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q4",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.42857142857142855,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.42857142857142855,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.42857142857142855,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.42857142857142855,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.42857142857142855,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.42857142857142855,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.42857142857142855,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q19",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q23",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q26",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q34",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q35",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q40",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q50",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q55",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q56",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q70",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-43:q72",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q81",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q94",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q104",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q119",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q133",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q140",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q147",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-43:q161",
+      "conversation": "conv-43",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q3",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.375,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.375,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q7",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q14",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q17",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q29",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q35",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q42",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q54",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-44:q67",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-44:q69",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-44:q71",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-44:q73",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-44:q74",
+      "conversation": "conv-44",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q0",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q4",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q19",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q24",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q26",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q44",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q56",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-47:q57",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q73",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q75",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q89",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q93",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q101",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q104",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q111",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-47:q120",
+      "conversation": "conv-47",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q13",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q17",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q18",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q42",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q50",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q53",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q61",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q82",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q91",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q109",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q121",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-48:q127",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q130",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q136",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q142",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q144",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q150",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q156",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q159",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-48:q190",
+      "conversation": "conv-48",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q0",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q2",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q7",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.1,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.1,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.1,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.1,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q26",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q44",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.6,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.6,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.6,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.6,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.6,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.6,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.6,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q50",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-49:q84",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q115",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q140",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q142",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-49:q155",
+      "conversation": "conv-49",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-50:q21",
+      "conversation": "conv-50",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-50:q24",
+      "conversation": "conv-50",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-50:q66",
+      "conversation": "conv-50",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-50:q92",
+      "conversation": "conv-50",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-50:q96",
+      "conversation": "conv-50",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_original_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      }
+    },
+    {
+      "id": "conv-50:q104",
+      "conversation": "conv-50",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    },
+    {
+      "id": "conv-50:q105",
+      "conversation": "conv-50",
+      "metrics": {
+        "adjacency": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "adjacency_stripped_query": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "strip_lexical_keep_original_seeds": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_original_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "body_stripped_gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      }
+    }
+  ],
+  "fallback_per_question": [
+    {
+      "id": "conv-42:q0",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q1",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.14285714285714285,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q14",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q29",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-42:q34",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.3333333333333333,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q42",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q50",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q51",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q56",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q57",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-42:q71",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-42:q72",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q74",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q84",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q103",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-42:q122",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-42:q123",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-42:q134",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q135",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q141",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-42:q147",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q148",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q172",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-42:q173",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-42:q191",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-42:q195",
+      "conversation": "conv-42",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-43:q3",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-43:q15",
+      "conversation": "conv-43",
+      "group": "zero_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-43:q21",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.6666666666666666,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-43:q25",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-43:q36",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.3333333333333333,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-43:q102",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-43:q107",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-43:q109",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-43:q110",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-43:q132",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-43:q144",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-43:q150",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-43:q151",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-43:q171",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-43:q175",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-43:q176",
+      "conversation": "conv-43",
+      "group": "zero_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-43:q177",
+      "conversation": "conv-43",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-44:q15",
+      "conversation": "conv-44",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-44:q16",
+      "conversation": "conv-44",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-44:q24",
+      "conversation": "conv-44",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-44:q40",
+      "conversation": "conv-44",
+      "group": "zero_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-44:q43",
+      "conversation": "conv-44",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-44:q44",
+      "conversation": "conv-44",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-44:q79",
+      "conversation": "conv-44",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-44:q80",
+      "conversation": "conv-44",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-44:q88",
+      "conversation": "conv-44",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-44:q115",
+      "conversation": "conv-44",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-47:q2",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-47:q3",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-47:q5",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-47:q16",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-47:q17",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-47:q18",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-47:q25",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-47:q33",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-47:q36",
+      "conversation": "conv-47",
+      "group": "zero_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-47:q45",
+      "conversation": "conv-47",
+      "group": "zero_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-47:q46",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-47:q48",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-47:q51",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-47:q68",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-47:q71",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-47:q97",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-47:q147",
+      "conversation": "conv-47",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-48:q6",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-48:q39",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.4,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-48:q41",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-48:q58",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-48:q69",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-48:q74",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-48:q92",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-48:q97",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-48:q99",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.5,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-48:q146",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-48:q164",
+      "conversation": "conv-48",
+      "group": "zero_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-48:q174",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-48:q188",
+      "conversation": "conv-48",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q18",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.2,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q19",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.09090909090909091,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q20",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.35294117647058826,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q27",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q31",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.6666666666666666,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q36",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q38",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q46",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q52",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q53",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.6666666666666666,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q62",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.25,
+        "any_evidence": 1,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q67",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q86",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q90",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q94",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q99",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q103",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q112",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q113",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q114",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q116",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q120",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q123",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q124",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q130",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q131",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q132",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q133",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q136",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q139",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q141",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q144",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-49:q145",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-49:q149",
+      "conversation": "conv-49",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-50:q4",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-50:q41",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-50:q45",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-50:q62",
+      "conversation": "conv-50",
+      "group": "zero_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-50:q93",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-50:q110",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-50:q118",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-50:q124",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-50:q125",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-50:q128",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    },
+    {
+      "id": "conv-50:q140",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 0.0,
+        "any_evidence": 0,
+        "all_evidence": 0
+      }
+    },
+    {
+      "id": "conv-50:q141",
+      "conversation": "conv-50",
+      "group": "multiple_names",
+      "identical_packet": true,
+      "metrics": {
+        "evidence_recall": 1.0,
+        "any_evidence": 1,
+        "all_evidence": 1
+      }
+    }
+  ]
+}

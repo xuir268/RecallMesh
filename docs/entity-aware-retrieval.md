@@ -62,3 +62,33 @@ Reproduce from the existing upstream dataset:
 ```
 
 The last two generation commands use authenticated accounts and retain cached first attempts. This implementation provides a new testable routing path; the positive retrieval result does not justify changing the default product or claiming general reasoning improvement.
+
+## Mechanism diagnostics (October 13)
+
+The original entity-aware experiment is the project's first passed explicitly preregistered retrieval criterion: +2.47 percentage points over adjacency, with a positive conversation-bootstrap lower bound. This is a narrow result on an exposed, predicate-selected cohort, not a general answer-quality result.
+
+A post-hoc diagnostic now separates query rewriting from routing. Reproduce with `.venv/bin/python benchmarks/entity_ablation.py`; metrics and per-question outcomes are in `benchmarks/protocols/entity-ablation-results-v1.json`. All arms use the same 100 questions, budget 16, frozen graph, and no reinforcement or model calls.
+
+| Arm | Recall@16 (%) | Complete packets / 100 |
+| --- | ---: | ---: |
+| Original adjacency | 57.89 | 48 |
+| Adjacency with name-stripped query, no gating | 57.39 | 48 |
+| Strip lexical query only; retain original graph seeds | 57.39 | 48 |
+| Body-only index, original query, no gating | 55.15 | 46 |
+| Body-only index, original query, gating | 56.96 | 47 |
+| Body-only index, stripped query, no gating | 57.50 | 48 |
+| Body-only index, stripped query, gating | 60.36 | 49 |
+
+The cheap query preprocessor does not recover the gain: its paired change is −0.50pp, cluster95 [−1.42, 0.00]. Within the stripped-query body-index comparison, gating contributes +2.85pp, cluster95 [1.67, 4.29]. Gating includes candidate-local score normalization; this test does not isolate filtering from normalization. The original method changed corpus scoring as well as query rewriting and candidate selection. Within the body-index controls, rewriting helps even without gating, and gating helps even without rewriting. Consequently the gain should not be described as purely interaction. Arm means alone also do not establish statistical equivalence of entity-only and BM25. These diagnostics are post-hoc; no new promotion threshold or product-default change is inferred from them.
+
+Outside the single-name predicate, all resolvable category 1–4 questions in the same seven conversations were checked: 122 multiple-name questions and seven zero-name questions. All 129 returned exactly the same ordered packets as original adjacency. Their respective recall is 51.31% and 85.71% for both methods. This is a no-harm check of exact delegation, not a fresh holdout or evidence that active entity routing generalizes. The zero-name sample is particularly small.
+
+## Budgeting answer evaluations
+
+Complete packets moved only 48 → 49. This is a warning against buying another answer pilot for this retrieval delta. It is not sufficient to predict an exact F1 change: net completion counts can hide gains and losses on different questions, and partial evidence and the contents of already-complete packets also affect answers.
+
+In the saved full-cohort oracle comparison, the 52 questions newly receiving complete evidence have mean paired answer-F1 changes of +0.2434 for Astra and +0.2624 for Claude. The 48 already-complete questions change −0.0121 and −0.0172, respectively. These are descriptive, unadjusted observations including failed attempts under the original scoring policy. If one additional completion in a 100-question evaluation behaved like that oracle subgroup, its projected contribution would be roughly +0.24–0.26 F1 percentage points. That requires exchangeability and unchanged results elsewhere; an entity-selected packet is not oracle evidence, and a net gain of one does not satisfy those assumptions automatically.
+
+Use this as a rough spending screen, not a causal conversion rate or power analysis. The proposed requirement of 8–10 completions for a 20-question pilot is not calibrated by these data. Before further model calls, specify the actual paired question set, the expected effect and acceptable uncertainty, and inspect gained/lost complete packets. No new model calls were made for these diagnostics.
+
+The defensible product position remains metadata-assisted conversational retrieval, with adjacency as the default and entity routing experimental. Failure of this particular retrieval-feedback learning protocol does not establish that all learned co-activation methods fail.
