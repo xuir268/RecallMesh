@@ -92,3 +92,18 @@ In the saved full-cohort oracle comparison, the 52 questions newly receiving com
 Use this as a rough spending screen, not a causal conversion rate or power analysis. The proposed requirement of 8–10 completions for a 20-question pilot is not calibrated by these data. Before further model calls, specify the actual paired question set, the expected effect and acceptable uncertainty, and inspect gained/lost complete packets. No new model calls were made for these diagnostics.
 
 The defensible product position remains metadata-assisted conversational retrieval, with adjacency as the default and entity routing experimental. Failure of this particular retrieval-feedback learning protocol does not establish that all learned co-activation methods fail.
+
+## Registered remaining-question confirmation (October 13)
+
+Protocol `benchmarks/protocols/entity-gating-remaining-v1.json` was committed and pushed as `66927bc` before the one-shot execution. Membership is all 159 remaining cases in the original 259-case pool, excluding the 100 entity-development questions. The primary contrast holds the body-only index, stripped lexical query, original-query graph seeds, frozen adjacency and budget 16 constant. Treatment restricts candidates to authored-by/explicit-mention postings and normalizes within that candidate set. The fixed criterion is an observed mean gain ≥2pp and a conversation-bootstrap95 lower bound above zero; these checks are reported separately.
+
+The exposure audit found all 159 questions in earlier HPC retrieval evaluation outputs. They were unused by the entity-gating study, but **not untouched by the project**. This is a registered remaining-question confirmation on previously evaluated conversations, not pristine holdout validation. The same first-person/single-speaker selection predicate remains a limitation.
+
+| Arm | Recall@16 (%) | Complete packets / 159 |
+| --- | ---: | ---: |
+| Stripped body scoring + adjacency, ungated | 59.68 | 79 |
+| Same scoring + entity candidate gating | 62.07 | 84 |
+
+Paired gain: **+2.39pp**, conversation-cluster95 **[+0.45, +4.33]**; wins/ties/losses **11/147/1**. Both registered checks pass. Six of seven conversation mean deltas are positive. The interval supports a positive effect, but its lower bound is below 2pp: this does not establish a population effect of at least 2pp. Seven clusters and selection matching the method's trigger restrict the scope of inference.
+
+Reproduction code: `benchmarks/entity_gating_remaining.py`. Frozen metrics, per-question and per-conversation deltas: `benchmarks/protocols/entity-gating-remaining-results-v1.json`. The runner refuses to overwrite existing results; run in a separate checkout without the result file to reproduce, retaining the fixed protocol. No parameter tuning, reruns, or model calls were performed after viewing this outcome. Adjacency stays the product default; entity routing stays experimental. This closes the requested experiment; no further evaluation is scheduled by this result.

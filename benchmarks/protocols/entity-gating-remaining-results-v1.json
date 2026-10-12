@@ -1,0 +1,2764 @@
+{
+  "protocol": "entity-gating-remaining-v1.json",
+  "n": 159,
+  "exposure": "All159 unused by the entity-gating study, but previously evaluated by earlier project retrieval benchmarks. Not a pristine holdout or new corpus. Same selection predicate and seven conversations as development cohort.",
+  "summary": {
+    "ungated": {
+      "evidence_recall": 0.5967970240065573,
+      "all_evidence": 0.4968553459119497,
+      "any_evidence": 0.7232704402515723
+    },
+    "gated": {
+      "evidence_recall": 0.6206514714459104,
+      "all_evidence": 0.5283018867924528,
+      "any_evidence": 0.7358490566037735
+    }
+  },
+  "delta": 0.0238544474393531,
+  "cluster95": [
+    0.004464901902790102,
+    0.04326710816777042
+  ],
+  "meets_2pp": true,
+  "positive_lower_bound": true,
+  "criterion_passed": true,
+  "wins": 11,
+  "ties": 147,
+  "losses": 1,
+  "conversation_deltas": {
+    "conv-42": {
+      "n": 31,
+      "mean_delta": 0.004608294930875578
+    },
+    "conv-43": {
+      "n": 25,
+      "mean_delta": 0.006666666666666666
+    },
+    "conv-44": {
+      "n": 18,
+      "mean_delta": 0.011111111111111112
+    },
+    "conv-47": {
+      "n": 25,
+      "mean_delta": 0.04
+    },
+    "conv-48": {
+      "n": 36,
+      "mean_delta": 0.05092592592592592
+    },
+    "conv-49": {
+      "n": 13,
+      "mean_delta": -0.023076923076923075
+    },
+    "conv-50": {
+      "n": 11,
+      "mean_delta": 0.06818181818181818
+    }
+  },
+  "per_question": [
+    {
+      "id": "conv-42:q70",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q113",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q80",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5714285714285714,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.7142857142857143,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.1428571428571429
+    },
+    {
+      "id": "conv-42:q11",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q160",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q102",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q89",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q130",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q75",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q55",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q30",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q149",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q116",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q47",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q105",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q19",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q35",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q12",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q36",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q82",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q53",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q45",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q4",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q104",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q175",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q107",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q6",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q100",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q114",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q96",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-42:q164",
+      "conversation": "conv-42",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q108",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q20",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q57",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q9",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q142",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q11",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q61",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q67",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q148",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q103",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q38",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q162",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q30",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q17",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q141",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q90",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q24",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q65",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q149",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q39",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q18",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.16666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.16666666666666666
+    },
+    {
+      "id": "conv-43:q137",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q7",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q12",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-43:q79",
+      "conversation": "conv-43",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q51",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q21",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q53",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q64",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q52",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q39",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q105",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q0",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q49",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q70",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q96",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q20",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q32",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q36",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q23",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q93",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-44:q9",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.4,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.2
+    },
+    {
+      "id": "conv-44:q91",
+      "conversation": "conv-44",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q82",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q34",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q32",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q49",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q132",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q143",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q136",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q105",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q22",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q67",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q61",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "id": "conv-47:q30",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "id": "conv-47:q148",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q31",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q64",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q13",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q112",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q62",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.6666666666666666,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q1",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q74",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q29",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q76",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q146",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q128",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-47:q102",
+      "conversation": "conv-47",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q15",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q73",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "id": "conv-48:q32",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q36",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q24",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q154",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q166",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q189",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q89",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q16",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q149",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q37",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q101",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q49",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q177",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 1.0
+    },
+    {
+      "id": "conv-48:q55",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q84",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q158",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q187",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q126",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q160",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q14",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q87",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q168",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q186",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q19",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q93",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q54",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.3333333333333333,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.3333333333333333
+    },
+    {
+      "id": "conv-48:q83",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q11",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q105",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q167",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q94",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q163",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q62",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-48:q64",
+      "conversation": "conv-48",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q3",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q11",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.05263157894736842,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.05263157894736842,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q72",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q108",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q96",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q55",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q1",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.2,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.4,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.2
+    },
+    {
+      "id": "conv-49:q8",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.75,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": -0.5
+    },
+    {
+      "id": "conv-49:q125",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q97",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q42",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.75,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.75,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q150",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-49:q6",
+      "conversation": "conv-49",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-50:q68",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-50:q83",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-50:q22",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-50:q95",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-50:q64",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "id": "conv-50:q7",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-50:q16",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-50:q130",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-50:q71",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        },
+        "gated": {
+          "evidence_recall": 1.0,
+          "any_evidence": 1,
+          "all_evidence": 1
+        }
+      },
+      "delta": 0.0
+    },
+    {
+      "id": "conv-50:q6",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.25,
+          "any_evidence": 1,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.5,
+          "any_evidence": 1,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "id": "conv-50:q82",
+      "conversation": "conv-50",
+      "metrics": {
+        "ungated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        },
+        "gated": {
+          "evidence_recall": 0.0,
+          "any_evidence": 0,
+          "all_evidence": 0
+        }
+      },
+      "delta": 0.0
+    }
+  ],
+  "model_calls": 0
+}
