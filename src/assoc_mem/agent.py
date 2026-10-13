@@ -39,6 +39,23 @@ Use rationale for one short sentence explaining the supporting facts, not a
 step-by-step reasoning trace. Return only JSON with answer, evidence_ids, rationale.
 '''
 
+GROUNDED_INSTRUCTIONS = INSTRUCTIONS + '''
+Resolve first-person statements using the speaker attached to that record; a
+speaker mentioning somebody else does not make that fact about the speaker.
+Treat record timestamps as the time of the utterance, not automatically the
+time of its event. Resolve relative dates against that record's timestamp only
+when the relation is supported. Preserve the precision the question requests.
+For a list, collect all distinct supported items across the records, excluding
+items merely recommended, planned, or attributed to another person unless asked.
+Distinguish completed events from intentions and reported possibilities.
+When records conflict, use a clearly dated correction if present; otherwise
+state the uncertainty rather than choosing a convenient fact.
+Return the shortest sufficient answer. Put explanatory date calculations and
+qualifications in rationale, retaining any uncertainty essential to the answer.
+Before returning, check that each answer claim has supporting supplied IDs.
+Do not fill missing facts from general knowledge or from the question itself.
+'''
+
 
 @dataclass(frozen=True)
 class Evidence:
@@ -129,7 +146,8 @@ class CliProvider:
     a benchmark completion. CLI startup is included in the reported latency.
     """
     def __init__(self, backend: str, model: str | None = None, timeout: float = 120,
-                 effort: str = 'medium', max_budget_usd: float = .25):
+                 effort: str = 'medium', max_budget_usd: float = .25,
+                 answer_profile: str = 'baseline'):
         if backend not in {'codex', 'claude'}:
             raise ValueError('backend must be codex or claude')
         self.backend = backend
@@ -137,9 +155,13 @@ class CliProvider:
         self.timeout = timeout
         self.effort = effort
         self.max_budget_usd = max_budget_usd
+        if answer_profile not in {'baseline', 'grounded'}:
+            raise ValueError('answer_profile must be baseline or grounded')
+        self.answer_profile = answer_profile
 
     def answer(self, question: str, evidence: list[Evidence]) -> Completion:
-        result = self.structured(INSTRUCTIONS, {'question': question,
+        instructions = GROUNDED_INSTRUCTIONS if self.answer_profile == 'grounded' else INSTRUCTIONS
+        result = self.structured(instructions, {'question': question,
                                  'evidence': [asdict(e) for e in evidence]}, ANSWER_SCHEMA)
         payload = parse_answer(json.dumps(result['data']))
         allowed = {e.id for e in evidence}

@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-13",
+  "seed": 20261013,
+  "case_ids": [
+    "conv-49:q11",
+    "conv-47:q34",
+    "conv-43:q18",
+    "conv-48:q37",
+    "conv-50:q68",
+    "conv-47:q13",
+    "conv-48:q11",
+    "conv-42:q4",
+    "conv-47:q30",
+    "conv-50:q95",
+    "conv-42:q114",
+    "conv-44:q96"
+  ],
+  "n": 12,
+  "calls": 48,
+  "arms": [
+    "baseline",
+    "grounded"
+  ],
+  "models": {
+    "codex": "gpt-6-astra",
+    "claude": "claude-sonnet-4-6"
+  },
+  "effort": "medium",
+  "workers_per_backend": 2,
+  "selection": "three per category 1/2/3/4, random from159 residual entity-study cases before answer outcomes; earlier retrieval exposure retained, not pristine holdout",
+  "comparison": "Same entity-retrieved16 original records for both arms; contemporary fresh-session answers, only instructions differ. One model call per arm; no gold or arm labels supplied.",
+  "scoring": "unchanged token F1; paired deltas, cluster95, W/T/L, abstentions, invalid citations, failure counts. Token overlap is not semantic correctness. Diagnostic pilot, no automatic default promotion.",
+  "policy": "No retries, model substitution or prompt tuning after outcomes. Existing default stays baseline.",
+  "prompt_sha256": {
+    "baseline": "efff94b4d96a6a57d3138549ad74437dec3ac2c590f96c047453b3e5a40469ef",
+    "grounded": "f4605ed7c05f196a71e411b72e5874012aa2b2151854b8bb1dfa656cbac05ae0"
+  },
+  "inputs": {
+    "conv-42:q4": "27eaf883c7eaa930e9d1679a7012fcb386f1ee902dae9f756471f3d280d41ffa",
+    "conv-42:q114": "2fdb80271c4b9cb8a15fdb66679a915bc5465014a000516f50f635d348158cdd",
+    "conv-43:q18": "9c086c05968011fcd5533e28e7de28f40ea17f2f47fb7e4156e4d1c4e67d01d6",
+    "conv-44:q96": "6631d3980704435f116f0198b0b6ac604d602229e667d971f8c9dd585191522d",
+    "conv-47:q34": "03224d10566b16c84e5b7ce302332ad27403a365fe095f6b69883c46b1e6cb85",
+    "conv-47:q13": "634b08c4ada11cb9f229826d67b59a2dd4342dafee15e9340d5d550b08a52195",
+    "conv-47:q30": "532359fc939878a0cb40f1933ab2240f054173827feedfc2c094eb573eafa672",
+    "conv-48:q37": "b470f5a12ff2c02e51e546ddfb3e14c902bd4dc9d8873ee60f224072509b7a2a",
+    "conv-48:q11": "41d06b52127094d4dd471f250107cf2af60a304911e9fc37211503c7a3965dcc",
+    "conv-49:q11": "7d50500f786bfd76cb19aa59c24134cc1dd17f5dab569592bb4af4db7b627242",
+    "conv-50:q68": "12cd785f498723d7b2a1be1504618eb26394259dd742f92cadbc4723c4d518f4",
+    "conv-50:q95": "11fc1ec3bc2f076d1e0f6887f9a3071d519f6ba67149246fe84f9bc1e489cab4"
+  }
+}
