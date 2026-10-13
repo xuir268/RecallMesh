@@ -16,7 +16,7 @@
     "conv-44:q96"
   ],
   "n": 12,
-  "calls": 24,
+  "calls": 0,
   "arms": [
     "baseline"
   ],
@@ -27,25 +27,26 @@
   "effort": "medium",
   "workers_per_backend": 2,
   "selection": "three per category 1/2/3/4, random from159 residual entity-study cases before answer outcomes; earlier retrieval exposure retained, not pristine holdout",
-  "comparison": "Exploratory follow-up on the same12 questions after failed prompt pilot.32 entity-retrieved original records with original baseline instructions versus immediately preceding16-record baseline calls. Not compute/context matched; reused comparator and outcome exposure. No gold or arm labels supplied. One new call per question/model.",
+  "comparison": "Exploratory follow-up on the same12 questions after failed prompt pilot.Up to64 complementary original records: first16 entity, first16 original adjacency, first16 ungated body topic, then remaining entity/adjacency/topic records, deduplicated with original baseline instructions versus immediately preceding16-record baseline calls. Not compute/context matched; reused comparator and outcome exposure. No gold or arm labels supplied. One new call per question/model.",
   "scoring": "unchanged token F1; paired deltas, cluster95, W/T/L, abstentions, invalid citations, failure counts. Token overlap is not semantic correctness. Diagnostic pilot, no automatic default promotion.",
-  "policy": "No retries, model substitution or prompt tuning after outcomes. Existing default stays baseline.",
+  "policy": "Exploratory retrieval preflight after failed prompt pilot, revised from32 entity records to up-to64 mixed before any answer calls; no frozen-success criterion, no pristine holdout or answer-gain claim. Do not run model calls for this artifact.",
   "prompt_sha256": {
     "baseline": "efff94b4d96a6a57d3138549ad74437dec3ac2c590f96c047453b3e5a40469ef",
     "grounded": "f4605ed7c05f196a71e411b72e5874012aa2b2151854b8bb1dfa656cbac05ae0"
   },
   "inputs": {
-    "conv-42:q4": "7a5e370421ffe928aeb5be457c551df78ee51922c18af61a12757da7f003814c",
-    "conv-42:q114": "4af9486e38fd35f660f2c35b774c4721c8b2e9230b2bedc65a5c6103de379cfb",
-    "conv-43:q18": "7536c7dd483183ec16954c3b14bc691a5d1e08a2706a52d5f5a3ecc611686810",
-    "conv-44:q96": "8b5ecc12d0d6007e573866f4c8b63fd6d1db3c61cdac2b9bca0ec73487979e07",
-    "conv-47:q34": "167bff19ac6d59a2999b61cc567fb89d79802547a40a950cf8d9f584930c64a5",
-    "conv-47:q13": "9411b5042c79de00166e68f1f0be33276961e8d89fc5bd07a740ab7d03fb777c",
-    "conv-47:q30": "60c4749d18d9891a080f2989a2ae1b24fe6887cfbb0e2b202c942e71bb2d424b",
-    "conv-48:q37": "c3536f2f9ee538dc9f3ae8725f7d75d9f4fce561489f2896c520f7e083c35e45",
-    "conv-48:q11": "705d5e34ec0489b2270245eb465e305747aa38065bdde627e45bf0ad0deaa422",
-    "conv-49:q11": "669265507868557304d2d30aeff42640e5a4b179fbe153ff6a2eb0e192ed0d95",
-    "conv-50:q68": "517b283cc81da92a82949336bbb79046f366f0215517c00fb8573d0ec91c0a5b",
-    "conv-50:q95": "2e72e228c7eab9b96a56e9b233dd2ffc3a56df6176e3ecc95d2c0a5a92bb6171"
-  }
+    "conv-42:q4": "bbc05a39ad4b463b7d151e4ab6ee436b0cdf292221b2abb3a6392e6cbc96f20d",
+    "conv-42:q114": "993067be4185f11abc4dbeedf7655f958ed6034035f2ef13321ecbcdc85b397a",
+    "conv-43:q18": "4d0c34025dc5082c04a42a5e8df84528c27f9acd1e5554f6122991a1c4f92d7c",
+    "conv-44:q96": "14235bd79605a2d4a198fbdaeb51a182adbc05fc9f8a9406366906b52905be2d",
+    "conv-47:q34": "d051136bca99676ecd3eb7324968699e0bec3a8643469cb225904372c9c4425b",
+    "conv-47:q13": "43c5608c673c384803539c2879680b89abd8743469cc88b94e434ea8a2072fbd",
+    "conv-47:q30": "a5c3808226058bc194d690ed5e983d1c1afd5f0b9e04ecc3daca7437f7e439a7",
+    "conv-48:q37": "e4b72e7c549138061fd547af1970327cc73c24b8b64810e3d1a132fb936ac4f7",
+    "conv-48:q11": "4dd5dc1854127221f9a1154a529b09319a1615a6ab798db16ce0085d19c3397c",
+    "conv-49:q11": "3ace416f5358691710248c482b01df64dd1b5fe13c5e69200bc10952a09c5d95",
+    "conv-50:q68": "9edf49516de431d0ad5aebf17e4e0cd57e7b2af5e028fadad416665cc28abf09",
+    "conv-50:q95": "6ba18da1d8c4fb1e9bde6100b11169fac2defb6f9bb55acdc302a477e5f50be5"
+  },
+  "status": "Preflight only; no model calls.16->32 and complementary up-to64 both left complete packets6/12; wider scoring not performed."
 }

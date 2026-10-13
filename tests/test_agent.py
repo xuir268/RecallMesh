@@ -134,3 +134,22 @@ def test_format_failure_retains_raw_answer_for_audit():
     with pytest.raises(AnswerFormatError) as failure:
         parse_answer('not json')
     assert failure.value.raw_output=='not json'
+
+
+def test_grounded_profile_routes_instructions_without_changing_evidence(monkeypatch):
+    from assoc_mem.agent import GROUNDED_INSTRUCTIONS, INSTRUCTIONS
+    seen = []
+    def structured(self, instructions, data, schema):
+        seen.append((instructions, data))
+        return {'data': {'answer': 'blue', 'evidence_ids': ['A'], 'rationale': 'fact'},
+                'metadata': {'model': self.model, 'seconds': 0}}
+    monkeypatch.setattr(CliProvider, 'structured', structured)
+    evidence = [Evidence('A', 'Quoted user content')]
+    CliProvider('codex').answer('color?', evidence)
+    CliProvider('codex', answer_profile='grounded').answer('color?', evidence)
+    assert seen[0][0] == INSTRUCTIONS
+    assert seen[1][0] == GROUNDED_INSTRUCTIONS
+    assert seen[0][1] == seen[1][1] == {
+        'question': 'color?', 'evidence': [{'id': 'A', 'text': 'Quoted user content'}]}
+    with pytest.raises(ValueError, match='answer_profile'):
+        CliProvider('codex', answer_profile='unknown')

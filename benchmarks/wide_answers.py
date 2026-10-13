@@ -16,7 +16,7 @@ OUT=ROOT/'benchmarks/results/wide-answers'
 PROTOCOL=ROOT/'benchmarks/protocols/wide-answers-v1.json'
 
 def prepare():
-    if PROTOCOL.exists(): raise SystemExit('Protocol already locked')
+    if (OUT/'codex').exists() or (OUT/'claude').exists(): raise SystemExit('Calls already started; cannot revise protocol')
     data=json.loads((ROOT/'benchmarks/data/locomo10.json').read_text()); samples={s['sample_id']:s for s in data}
     pool=json.loads((ROOT/'benchmarks/protocols/entity-gating-remaining-v1.json').read_text())['membership']
     rng=random.Random(20261013); chosen=[]
@@ -40,14 +40,21 @@ def prepare():
                 previous=nid
         graph.freeze(tick)
         for c in cases:
-            qa=sample['qa'][c['question_index']];evidence=[records[int(n)] for n in entity.search(qa['question'],tick,budget=32)]
+            qa=sample['qa'][c['question_index']];route=entity.explain(qa['question'],tick,budget=64)
+            entity_ids=[r['node'] for r in route['results']]
+            adjacency_ids=adj.search(qa['question'],tick,budget=32).tolist()
+            topic_ids=adj.rank(entity.topic.scores(route['topic_query']),np.zeros(len(index.lengths),np.float32),32,0).tolist()
+            mixed=list(dict.fromkeys(entity_ids[:16]+adjacency_ids[:16]+topic_ids[:16]+entity_ids[16:]+adjacency_ids[16:]+topic_ids[16:]))[:64]
+            evidence=[records[int(n)] for n in mixed]
             jobs.append({'case':c['id'],'question':qa['question'],'gold':str(qa['answer']),'category':qa['category'],'required':c['gold'],'evidence':evidence,'input_sha256':hashlib.sha256(json.dumps({'question':qa['question'],'evidence':evidence},sort_keys=True).encode()).hexdigest()})
-    protocol={'date':'2026-10-13','seed':20261013,'case_ids':[c['id'] for c in chosen],'n':12,'calls':24,'arms':['baseline'],'models':{'codex':'gpt-6-astra','claude':'claude-sonnet-4-6'},'effort':'medium','workers_per_backend':2,'selection':'three per category 1/2/3/4, random from159 residual entity-study cases before answer outcomes; earlier retrieval exposure retained, not pristine holdout','comparison':'Exploratory follow-up on the same12 questions after failed prompt pilot.32 entity-retrieved original records with original baseline instructions versus immediately preceding16-record baseline calls. Not compute/context matched; reused comparator and outcome exposure. No gold or arm labels supplied. One new call per question/model.','scoring':'unchanged token F1; paired deltas, cluster95, W/T/L, abstentions, invalid citations, failure counts. Token overlap is not semantic correctness. Diagnostic pilot, no automatic default promotion.','policy':'No retries, model substitution or prompt tuning after outcomes. Existing default stays baseline.','prompt_sha256':{a:hashlib.sha256(p.encode()).hexdigest() for a,p in [('baseline',INSTRUCTIONS),('grounded',GROUNDED_INSTRUCTIONS)]},'inputs':{j['case']:j['input_sha256'] for j in jobs}}
+    protocol={'date':'2026-10-13','seed':20261013,'case_ids':[c['id'] for c in chosen],'n':12,'calls':24,'arms':['baseline'],'models':{'codex':'gpt-6-astra','claude':'claude-sonnet-4-6'},'effort':'medium','workers_per_backend':2,'selection':'three per category 1/2/3/4, random from159 residual entity-study cases before answer outcomes; earlier retrieval exposure retained, not pristine holdout','comparison':'Exploratory follow-up on the same12 questions after failed prompt pilot.Up to64 complementary original records: first16 entity, first16 original adjacency, first16 ungated body topic, then remaining entity/adjacency/topic records, deduplicated with original baseline instructions versus immediately preceding16-record baseline calls. Not compute/context matched; reused comparator and outcome exposure. No gold or arm labels supplied. One new call per question/model.','scoring':'unchanged token F1; paired deltas, cluster95, W/T/L, abstentions, invalid citations, failure counts. Token overlap is not semantic correctness. Diagnostic pilot, no automatic default promotion.','policy':'No retries, model substitution or prompt tuning after outcomes. Existing default stays baseline.','prompt_sha256':{a:hashlib.sha256(p.encode()).hexdigest() for a,p in [('baseline',INSTRUCTIONS),('grounded',GROUNDED_INSTRUCTIONS)]},'inputs':{j['case']:j['input_sha256'] for j in jobs}}
     OUT.mkdir(parents=True,exist_ok=True);(OUT/'jobs.json').write_text(json.dumps(jobs,indent=2));PROTOCOL.write_text(json.dumps(protocol,indent=2)+'\n')
     print('Locked12 questions,24 new calls for wider context')
 
 def run(backend):
-    protocol=json.loads(PROTOCOL.read_text());jobs=json.loads((OUT/'jobs.json').read_text());folder=OUT/backend;folder.mkdir(exist_ok=True)
+    protocol=json.loads(PROTOCOL.read_text())
+    if protocol.get('calls') == 0: raise SystemExit('Model calls disabled: retrieval preflight did not increase completion count.')
+    jobs=json.loads((OUT/'jobs.json').read_text());folder=OUT/backend;folder.mkdir(exist_ok=True)
     calls=[(j,a) for j in jobs for a in protocol['arms']];random.Random(20261013).shuffle(calls)
     def one(job,arm):
         path=folder/(job['case']+'-'+arm+'.json')
