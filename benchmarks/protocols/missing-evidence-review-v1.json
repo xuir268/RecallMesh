@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-15",
+  "reviewer": "implementation assistant; qualitative source review, not independent or blinded adjudication",
+  "scope": "Public text and supplied captions only; no external knowledge or model calls. Labels do not replace original benchmark gold.",
+  "cases": {
+    "conv-42:q4": {
+      "finding": "Missing allergy source is real, but it does not identify any pet guaranteed to cause no discomfort. Named safe-pet reference answer is unsupported under evidence-only policy.",
+      "sources": {"D2:23": "Relevant allergy constraint; insufficient for the specific safe-pet reference answer."},
+      "answer_review": "Grounded abstention is warranted. Baseline Astra answer is tautological rather than a supported specific pet; both have zero F1."
+    },
+    "conv-43:q18": {
+      "finding": "Real lexical mismatch between authors question and mostly book-title records, mixed with weak or mismatched gold support. Author identities may require knowledge absent from the annotated records.",
+      "sources": {"D1:14": "Friend's fandom and book-world discussion; weak evidence for Tim's own reading and no author name.", "D26:36": "A loved book series, but no author name; its authors are not in the reference author list.", "D2:7": "Collection photograph with generic caption; visual search query is not supplied text evidence and not proof of reading or authorship.", "D4:7": "Enthusiasm for two titled works, no author identities; may support reading inference but not evidence-only author mapping."},
+      "answer_review": "Patrick Rothfuss is explicitly supported in supplied records. Claude grounded adds a title-to-author mapping not stated in its cited source: higher token F1 does not prove better evidence-only behavior."
+    },
+    "conv-47:q34": {
+      "finding": "Post-trip source is real and outside two-hop reach of nearest retrieved same-session record. It requires linking trip/event context and a city-to-country mapping.",
+      "sources": {"D17:22": "Confirms completed travel to another country and names Nuuk; country name is not explicit. Preceding turn D17:21 supplies trip context."},
+      "answer_review": "Both baseline models infer completed Canada travel from plans. Astra grounded refusal is defensible under supplied packet; missing the Greenland source alone would not automatically justify refusing a separately confirmed Canada fact."
+    },
+    "conv-48:q11": {
+      "finding": "Annotated sources are redundant for the benchmark's intended yes answer; one supplied marriage statement already supports it, with ordinary conversational inference rather than proof of current legal status.",
+      "sources": {"D19:11": "Additional husband reference, redundant for intended answer.", "D23:4": "Additional husband reference, redundant for intended answer.", "D2:5": "Additional husband reference, recovered at64, redundant for intended answer."},
+      "answer_review": "Both models and profiles answer yes from D28:11. This is not guessing merely because full gold coverage is false."
+    },
+    "conv-49:q11": {
+      "finding": "19-source gold set cannot fit budget16. Several sources are incidental; D12:1 or D2:6 directly support weight concerns and are recovered at64. D14:1 introduces a distinct gastritis health scare, adding ambiguity to broad question wording.",
+      "sources": {"D10:6": "Eating triggers; contextual, not specific health issue.", "D12:1": "Direct weight-related health warning; recovered64.", "D13:2": "Snack lapse; contextual.", "D14:1": "Different explicit illness and lifestyle motivation; recovered64, potential competing interpretation.", "D15:1": "Routine/family pressure; contextual, recovered64.", "D16:3": "Better-health goal; contextual, recovered64.", "D17:3": "Discomfort and movement limits; nonspecific, recovered64.", "D24:12": "Doctor appointment intention; contextual.", "D24:14": "Diet/exercise advice intention; contextual.", "D24:20": "Diet/yoga hopes; contextual.", "D25:1": "Weight affecting life; relevant, recovered64.", "D25:3": "Nonspecific health comment; contextual, recovered64.", "D2:6": "Direct weight/check-up concern; recovered64.", "D3:4": "Diet habits; contextual.", "D5:5": "Other speaker's health issues, not evidence of Sam's condition; excluded by entity gate.", "D6:2": "Nonspecific health comment; contextual, recovered64.", "D7:2": "Doctor visit and lifestyle change, no named condition; recovered64.", "D8:1": "Diet/lifestyle change; contextual."},
+      "answer_review": "Both models abstain on the16-record packet lacking specific condition evidence. The64-record packet contains direct weight evidence despite failing full19-source coverage; no answers were generated for it."
+    },
+    "conv-50:q68": {
+      "finding": "Real pronoun/event-link retrieval failure: the date-bearing source lacks the car/blog words and is six same-session turns from nearest retrieved record, beyond two hops.",
+      "sources": {"D28:20": "Relative acquisition date; D28:19 supplies car referent and session timestamp anchors last week. Retrieving the source together with context can support intended answer at stated precision."},
+      "answer_review": "Both models appropriately abstain with existing16-record packet; prompt wording cannot supply absent acquisition date."
+    }
+  },
+  "decision": "Pause answer optimization on original token-F1/full-gold-completion success criteria. Preserve old scores as historical lexical-overlap measurements. Before any future answer eval, define and independently review support-sufficient evidence alternatives, answerability under actual supplied packet, acceptable partial answers and justified abstention. No new model calls or default changes."
+}

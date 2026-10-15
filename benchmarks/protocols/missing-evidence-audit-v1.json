@@ -1,0 +1,645 @@
+{
+  "date": "2026-10-15",
+  "scope": "Six incomplete cases selected post-hoc; original public dataset, no model calls. Lexical rank is over full body index. Distance is undirected within-session turn distance, not proof of membership in current seed set. Candidate inclusion and positive activation are separate from final top-k.",
+  "cases": [
+    {
+      "case": "conv-42:q4",
+      "annotated_source_count": 1,
+      "all_gold_possible_at16": true,
+      "missing16": 1,
+      "missing64": 1,
+      "sources": [
+        {
+          "source": "D2:23",
+          "in_corpus": true,
+          "speaker": "Joanna",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 148,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": 8,
+          "in64": false,
+          "previous_turn": "D2:22",
+          "next_turn": "D2:24"
+        }
+      ]
+    },
+    {
+      "case": "conv-43:q18",
+      "annotated_source_count": 6,
+      "all_gold_possible_at16": true,
+      "missing16": 4,
+      "missing64": 4,
+      "sources": [
+        {
+          "source": "D1:14",
+          "in_corpus": true,
+          "speaker": "Tim",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 2.169950008392334,
+          "stripped_body_bm25_global_rank": 110,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": false,
+          "previous_turn": "D1:13",
+          "next_turn": "D1:15"
+        },
+        {
+          "source": "D26:36",
+          "in_corpus": true,
+          "speaker": "Tim",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 617,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": false,
+          "previous_turn": "D26:35",
+          "next_turn": "D26:37"
+        },
+        {
+          "source": "D2:7",
+          "in_corpus": true,
+          "speaker": "Tim",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 2.4661030769348145,
+          "stripped_body_bm25_global_rank": 83,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": false,
+          "previous_turn": "D2:6",
+          "next_turn": "D2:8"
+        },
+        {
+          "source": "D4:7",
+          "in_corpus": true,
+          "speaker": "Tim",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 202,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": false,
+          "previous_turn": "D4:6",
+          "next_turn": "D4:8"
+        }
+      ]
+    },
+    {
+      "case": "conv-47:q34",
+      "annotated_source_count": 2,
+      "all_gold_possible_at16": true,
+      "missing16": 1,
+      "missing64": 1,
+      "sources": [
+        {
+          "source": "D17:22",
+          "in_corpus": true,
+          "speaker": "James",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 386,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": 4,
+          "in64": false,
+          "previous_turn": "D17:21",
+          "next_turn": "D17:23"
+        }
+      ]
+    },
+    {
+      "case": "conv-48:q11",
+      "annotated_source_count": 4,
+      "all_gold_possible_at16": true,
+      "missing16": 3,
+      "missing64": 2,
+      "sources": [
+        {
+          "source": "D19:11",
+          "in_corpus": true,
+          "speaker": "Deborah",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 413,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": false,
+          "previous_turn": "D19:10",
+          "next_turn": "D19:12"
+        },
+        {
+          "source": "D23:4",
+          "in_corpus": true,
+          "speaker": "Deborah",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 503,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": false,
+          "previous_turn": "D23:3",
+          "next_turn": "D23:5"
+        },
+        {
+          "source": "D2:5",
+          "in_corpus": true,
+          "speaker": "Deborah",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 26,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": true,
+          "previous_turn": "D2:4",
+          "next_turn": "D2:6"
+        }
+      ]
+    },
+    {
+      "case": "conv-49:q11",
+      "annotated_source_count": 19,
+      "all_gold_possible_at16": false,
+      "missing16": 18,
+      "missing64": 8,
+      "sources": [
+        {
+          "source": "D10:6",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 225,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": false,
+          "previous_turn": "D10:5",
+          "next_turn": "D10:7"
+        },
+        {
+          "source": "D12:1",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 1.5562478303909302,
+          "stripped_body_bm25_global_rank": 60,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": true,
+          "previous_turn": null,
+          "next_turn": "D12:2"
+        },
+        {
+          "source": "D13:2",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 266,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": false,
+          "previous_turn": "D13:1",
+          "next_turn": "D13:3"
+        },
+        {
+          "source": "D14:1",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 2.5707433223724365,
+          "stripped_body_bm25_global_rank": 43,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": true,
+          "previous_turn": null,
+          "next_turn": "D14:2"
+        },
+        {
+          "source": "D15:1",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 2.5108482837677,
+          "stripped_body_bm25_global_rank": 45,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": 8,
+          "in64": true,
+          "previous_turn": null,
+          "next_turn": "D15:2"
+        },
+        {
+          "source": "D16:3",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 2.849100112915039,
+          "stripped_body_bm25_global_rank": 36,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": true,
+          "previous_turn": "D16:2",
+          "next_turn": "D16:4"
+        },
+        {
+          "source": "D17:3",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 1.9070801734924316,
+          "stripped_body_bm25_global_rank": 57,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": true,
+          "previous_turn": "D17:2",
+          "next_turn": "D17:4"
+        },
+        {
+          "source": "D24:12",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 482,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": 6,
+          "in64": false,
+          "previous_turn": "D24:11",
+          "next_turn": "D24:13"
+        },
+        {
+          "source": "D24:14",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 484,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": 4,
+          "in64": false,
+          "previous_turn": "D24:13",
+          "next_turn": "D24:15"
+        },
+        {
+          "source": "D24:20",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 489,
+          "original_graph_activation": 0.031275637447834015,
+          "nearest_packet_turn_same_session": 2,
+          "in64": false,
+          "previous_turn": "D24:19",
+          "next_turn": "D24:21"
+        },
+        {
+          "source": "D25:1",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 1.9361790418624878,
+          "stripped_body_bm25_global_rank": 55,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": true,
+          "previous_turn": null,
+          "next_turn": "D25:2"
+        },
+        {
+          "source": "D25:3",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 2.6693010330200195,
+          "stripped_body_bm25_global_rank": 41,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": true,
+          "previous_turn": "D25:2",
+          "next_turn": "D25:4"
+        },
+        {
+          "source": "D2:6",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 88,
+          "original_graph_activation": 0.05880998075008392,
+          "nearest_packet_turn_same_session": 1,
+          "in64": true,
+          "previous_turn": "D2:5",
+          "next_turn": "D2:7"
+        },
+        {
+          "source": "D3:4",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 99,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": 3,
+          "in64": false,
+          "previous_turn": "D3:3",
+          "next_turn": "D3:5"
+        },
+        {
+          "source": "D5:5",
+          "in_corpus": true,
+          "speaker": "Evan",
+          "passes_entity_gate": false,
+          "stripped_body_bm25_score": 2.0290591716766357,
+          "stripped_body_bm25_global_rank": 53,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": 2,
+          "in64": false,
+          "previous_turn": "D5:4",
+          "next_turn": "D5:6"
+        },
+        {
+          "source": "D6:2",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 2.244389057159424,
+          "stripped_body_bm25_global_rank": 47,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": null,
+          "in64": true,
+          "previous_turn": "D6:1",
+          "next_turn": "D6:3"
+        },
+        {
+          "source": "D7:2",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 158,
+          "original_graph_activation": 0.18184790015220642,
+          "nearest_packet_turn_same_session": 1,
+          "in64": true,
+          "previous_turn": "D7:1",
+          "next_turn": "D7:3"
+        },
+        {
+          "source": "D8:1",
+          "in_corpus": true,
+          "speaker": "Sam",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 170,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": 5,
+          "in64": false,
+          "previous_turn": null,
+          "next_turn": "D8:2"
+        }
+      ]
+    },
+    {
+      "case": "conv-50:q68",
+      "annotated_source_count": 1,
+      "all_gold_possible_at16": true,
+      "missing16": 1,
+      "missing64": 1,
+      "sources": [
+        {
+          "source": "D28:20",
+          "in_corpus": true,
+          "speaker": "Dave",
+          "passes_entity_gate": true,
+          "stripped_body_bm25_score": 0.0,
+          "stripped_body_bm25_global_rank": 510,
+          "original_graph_activation": 0.0,
+          "nearest_packet_turn_same_session": 6,
+          "in64": false,
+          "previous_turn": "D28:19",
+          "next_turn": "D28:21"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "cases": 6,
+    "missing16_sources": 28,
+    "missing_sources_found_in_corpus": 28,
+    "missing16_sources_recovered_in64": 11,
+    "missing_sources_passing_gate": 27,
+    "zero_body_bm25": 17,
+    "positive_original_activation": 3
+  },
+  "behavior": {
+    "codex": {
+      "incomplete_baseline_answered": 4,
+      "incomplete_grounded_answered": 2,
+      "new_abstentions": [
+        "conv-42:q4",
+        "conv-47:q34"
+      ],
+      "per_question": [
+        {
+          "case": "conv-42:q4",
+          "complete": false,
+          "baseline_abstained": false,
+          "grounded_abstained": true,
+          "baseline_f1": 0.0,
+          "grounded_f1": 0.0
+        },
+        {
+          "case": "conv-42:q114",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.3333333333333333,
+          "grounded_f1": 0.3333333333333333
+        },
+        {
+          "case": "conv-43:q18",
+          "complete": false,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.2,
+          "grounded_f1": 0.2
+        },
+        {
+          "case": "conv-44:q96",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.8421052631578947,
+          "grounded_f1": 0.8421052631578947
+        },
+        {
+          "case": "conv-47:q34",
+          "complete": false,
+          "baseline_abstained": false,
+          "grounded_abstained": true,
+          "baseline_f1": 0.5,
+          "grounded_f1": 0.0
+        },
+        {
+          "case": "conv-47:q13",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.6666666666666666,
+          "grounded_f1": 0.6666666666666666
+        },
+        {
+          "case": "conv-47:q30",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 1.0,
+          "grounded_f1": 1.0
+        },
+        {
+          "case": "conv-48:q37",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.25,
+          "grounded_f1": 0.25
+        },
+        {
+          "case": "conv-48:q11",
+          "complete": false,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 1.0,
+          "grounded_f1": 1.0
+        },
+        {
+          "case": "conv-49:q11",
+          "complete": false,
+          "baseline_abstained": true,
+          "grounded_abstained": true,
+          "baseline_f1": 0.0,
+          "grounded_f1": 0.0
+        },
+        {
+          "case": "conv-50:q68",
+          "complete": false,
+          "baseline_abstained": true,
+          "grounded_abstained": true,
+          "baseline_f1": 0.0,
+          "grounded_f1": 0.0
+        },
+        {
+          "case": "conv-50:q95",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.5714285714285714,
+          "grounded_f1": 0.75
+        }
+      ]
+    },
+    "claude": {
+      "incomplete_baseline_answered": 3,
+      "incomplete_grounded_answered": 3,
+      "new_abstentions": [],
+      "per_question": [
+        {
+          "case": "conv-42:q4",
+          "complete": false,
+          "baseline_abstained": true,
+          "grounded_abstained": true,
+          "baseline_f1": 0.0,
+          "grounded_f1": 0.0
+        },
+        {
+          "case": "conv-42:q114",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.2222222222222222,
+          "grounded_f1": 0.2
+        },
+        {
+          "case": "conv-43:q18",
+          "complete": false,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.2,
+          "grounded_f1": 0.36
+        },
+        {
+          "case": "conv-44:q96",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.875,
+          "grounded_f1": 0.56
+        },
+        {
+          "case": "conv-47:q34",
+          "complete": false,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.25,
+          "grounded_f1": 0.5
+        },
+        {
+          "case": "conv-47:q13",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.6666666666666666,
+          "grounded_f1": 0.6666666666666666
+        },
+        {
+          "case": "conv-47:q30",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 1.0,
+          "grounded_f1": 0.6666666666666666
+        },
+        {
+          "case": "conv-48:q37",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.6666666666666666,
+          "grounded_f1": 0.7142857142857143
+        },
+        {
+          "case": "conv-48:q11",
+          "complete": false,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 1.0,
+          "grounded_f1": 1.0
+        },
+        {
+          "case": "conv-49:q11",
+          "complete": false,
+          "baseline_abstained": true,
+          "grounded_abstained": true,
+          "baseline_f1": 0.0,
+          "grounded_f1": 0.0
+        },
+        {
+          "case": "conv-50:q68",
+          "complete": false,
+          "baseline_abstained": true,
+          "grounded_abstained": true,
+          "baseline_f1": 0.0,
+          "grounded_f1": 0.0
+        },
+        {
+          "case": "conv-50:q95",
+          "complete": true,
+          "baseline_abstained": false,
+          "grounded_abstained": false,
+          "baseline_f1": 0.6666666666666666,
+          "grounded_f1": 0.6666666666666666
+        }
+      ]
+    }
+  },
+  "model_calls": 0
+}
